@@ -13,7 +13,7 @@ const App = () => {
     <>
       <Header />
       <StyledSpacer>
-        <AppRouter />;
+        <AppRouter />
       </StyledSpacer>
     </>
   );

@@ -1,5 +1,7 @@
+import HomeTopSection from "../components/HomeDescriptionPanel.jsx"
+
 const Home = () => {
-  return <h1>Bienvenido a la página de inicio</h1>;
+  return <HomeTopSection/>
 };
 
 export default Home;
