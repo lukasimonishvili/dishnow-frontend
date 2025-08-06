@@ -1,0 +1,26 @@
+{
+  "EN": {
+    "home": "Home",
+    "recipes": "Recipes",
+    "login": "Login",
+    "register": "Register",
+    "footerDescription": "Stop wondering what to cook—discover new recipes based on what’s in your kitchen, and share your own culinary creations with the world.",
+    "footerRights": "All rights reserved."
+  },
+  "ES": {
+    "home": "Inicio",
+    "recipes": "Recetas",
+    "login": "Iniciar sesión",
+    "register": "Registrarse",
+    "footerDescription": "Deja de preguntarte qué cocinar: descubre nuevas recetas basadas en lo que tienes en tu cocina y comparte tus propias creaciones culinarias con el mundo.",
+    "footerRights": "Todos los derechos reservados."
+  },
+  "CA": {
+    "home": "Inici",
+    "recipes": "Receptes",
+    "login": "Iniciar sessió",
+    "register": "Registrar-se",
+    "footerDescription": "Deixa de preguntar-te què cuinar: descobreix noves receptes basades en el que tens a la teva cuina i comparteix les teves pròpies creacions culinàries amb el món.",
+    "footerRights": "Tots els drets reservats."
+  }
+}
