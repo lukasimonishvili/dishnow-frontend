@@ -43,6 +43,7 @@ const StyledSingularity = Styled.h1`
 
 const FoodImagesContent = Styled.div`
   position: relative;
+  margin-right: 80px;
 `;
 
 
@@ -83,6 +84,7 @@ const HomeWhyUs = () => {
 
     <FoodImagesContent>
       <img src={CirclesOnCircles} alt="Circles"/>
+
       <ImageTableFoodContainer>
         <ImageTemplate src={FoodTable} alt="Food table" />
       </ImageTableFoodContainer>
@@ -90,6 +92,18 @@ const HomeWhyUs = () => {
         <ImageTemplate src={FoodKorean} alt="Korean food"/>
       </ImageKoreanContainer>
     </FoodImagesContent>
+
+    <div>
+      <h4>Ingredient-Based Recipes</h4>
+      <h1>Why Us?</h1>
+      <p>Discover personalized recipes based on the ingredients you have at home.
+      <br/>Save time, avoid waste, and cook delicious dishes without the hassle.</p>
+      <ul>
+        <li>Intuitive interface.</li>
+        <li>Healthy and delicious recipes to eat.</li>
+        <li>Quick and easy recipes, specially chosen for you based on what you already have available.</li>
+      </ul>
+    </div>
 
     </StyledSection>
 

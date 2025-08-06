@@ -29,6 +29,7 @@ const StyleMainDivisor = Styled.div`
 `;
 
 const StyledMainIMG = Styled.img`
+  box-shadow: 0px 4px 40px 1px rgba(0 , 0, 0, 0.2);
   width: 100%;
   max-width: 803.72px;
   height: 557.5px;
