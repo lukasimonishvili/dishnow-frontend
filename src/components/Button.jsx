@@ -18,6 +18,10 @@ const StyledButton = Styled.button`
     padding-top: 13px;
     padding-right: 33px;
     padding-left: 33px;
+    &:focus {
+    outline: 2px solid #000; /* o el color que quieras */
+    outline-offset: 2px;
+  }
 `;
 
 const Button = ({ input_text, color, text_color, on_click_function }) => {
