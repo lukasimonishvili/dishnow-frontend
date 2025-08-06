@@ -1,6 +1,12 @@
 import Styled from "styled-components";
 import { FaCheck } from "react-icons/fa";
 
+import CirclesOnCircles from "../assets/img/CirclesOnCircles.png";
+import FoodTable from "../assets/img/FoodTable.png";
+import FoodKorean from "../assets/img/FoodKorean.png";
+
+
+
 const StyledSection = Styled.section`
   border-top: 0.5px #3C3C3C solid;
   border-bottom: 0.5px #3C3C3C solid;
@@ -12,6 +18,7 @@ const StyledSection = Styled.section`
 
   display: flex;
   justify-content: space-between;
+  width:100%
 `;
 const StyledSingularityDiv = Styled.div`
     display: flex;
@@ -34,40 +41,55 @@ const StyledSingularity = Styled.h1`
   }
 `;
 
+const FoodImagesContent = Styled.div`
+  position: relative;
+`;
+
+
+const ImageTemplate = Styled.img`
+  width: 100%;
+  height: auto;
+`;  
+
+const ImageKoreanContainer = Styled.div`
+  position: absolute;
+  box-shadow: 0px 4px 40px 1px rgba(0, 0, 0, 0.2);
+  width: 349px;
+  height: 221px;
+  left: 50%;
+  top: 50%;
+
+  overflow: hidden;
+  border-radius: 18px;
+  `;
+
+const ImageTableFoodContainer = Styled.div`
+  position: absolute;
+  top:20%;
+  left:0px;
+
+  width: 497px;
+  height: 323px;
+
+  box-shadow: 0px 4px 40px 1px rgba(0 , 0, 0, 0.2);
+  overflow: hidden;
+  border-radius: 18px;
+  `;
 
 const HomeWhyUs = () => {
 
   return <>
     <StyledSection>
 
-      <StyledSingularityDiv>
-        <FaCheck></FaCheck>
-        <StyledSingularity>
-          Easy to <span>Use</span>
-        </StyledSingularity>
-      </StyledSingularityDiv>
-      
-      <StyledSingularityDiv>
-        <FaCheck></FaCheck>
-        <StyledSingularity>
-          1000+ <span>Recipes</span>
-        </StyledSingularity>
-      </StyledSingularityDiv>
-      
-      
-      <StyledSingularityDiv>
-        <FaCheck></FaCheck>
-        <StyledSingularity>
-          Eat <span>Better</span> now
-        </StyledSingularity>
-      </StyledSingularityDiv>
-      
-      <StyledSingularityDiv>
-        <FaCheck></FaCheck>
-        <StyledSingularity>
-          Improve your <span>Life</span>
-        </StyledSingularity>
-      </StyledSingularityDiv>
+    <FoodImagesContent>
+      <img src={CirclesOnCircles} alt="Circles"/>
+      <ImageTableFoodContainer>
+        <ImageTemplate src={FoodTable} alt="Food table" />
+      </ImageTableFoodContainer>
+      <ImageKoreanContainer>
+        <ImageTemplate src={FoodKorean} alt="Korean food"/>
+      </ImageKoreanContainer>
+    </FoodImagesContent>
 
     </StyledSection>
 

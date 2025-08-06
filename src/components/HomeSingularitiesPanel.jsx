@@ -9,7 +9,10 @@ const StyledSection = Styled.section`
   padding-right: 86px;
 
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+  width:100%
 `;
 const StyledSingularityDiv = Styled.div`
     display: flex;
@@ -24,6 +27,8 @@ const StyledSingularity = Styled.h1`
   font-size: 25px;
   line-height: 29px;
   letter-spacing: -0.02em;
+
+  min-width: 200px  ;
 
   color: #000000;
 

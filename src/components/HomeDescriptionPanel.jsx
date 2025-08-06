@@ -11,6 +11,16 @@ const StyledSection = Styled.section`
 
   display: flex;
   justify-content: space-between;
+  @media only screen and (max-width: 1000px) {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    padding-right: 86px;
+    flex-direction:column;
+    align-items: anchor-center;
+  }
 `;
 
 const StyleMainDivisor = Styled.div`
@@ -19,8 +29,14 @@ const StyleMainDivisor = Styled.div`
 `;
 
 const StyledMainIMG = Styled.img`
-  width: 803.72px;
+  width: 100%;
+  max-width: 803.72px;
   height: 557.5px;
+  margin-left: 10px;
+  border-radius: 18px;
+  @media only screen and (max-width: 1000px) {
+    height: auto;
+  }
 `;
 
 const StyledSubTittle = Styled.h4`/* TRY TODAY */
