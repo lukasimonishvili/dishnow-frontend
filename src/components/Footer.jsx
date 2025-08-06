@@ -3,6 +3,8 @@ import logoImage from "../assets/img/logo.png";
 import instagramIcon from "../assets/img/instagram.svg";
 import twitterIcon from "../assets/img/twitter.svg";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../contexts/languageContext.jsx";
+import langData from "../assets/lang.json";
 
 const StyledFooter = Styled.footer`
     width: 100%;
@@ -65,17 +67,19 @@ const StyledSocials = Styled.div`
 `;
 
 const Footer = () => {
+  const { language } = useLanguage();
+
   return (
     <StyledFooter>
       <StyledContainer>
         <StyledLogoWrapper>
           <img src={logoImage} alt="Logo" />
-          <p>
-            Stop wondering what to cook—discover new recipes based on what’s in
-            your kitchen, and share your own culinary creations with the world.
-          </p>
+          <p>{langData[language].footerDescription}</p>
         </StyledLogoWrapper>
-        <p>© {new Date().getFullYear()} DishNow. All rights reserved.</p>
+        <p>
+          © {new Date().getFullYear()} DishNow.{" "}
+          {langData[language].footerRights}
+        </p>
         <StyledSocials>
           <Link
             to="https://www.instagram.com/dishnow"

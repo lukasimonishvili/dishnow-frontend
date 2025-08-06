@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import Styled from "styled-components";
 import logoImage from "../assets/img/logo.png";
 import { useState } from "react";
+import { useLanguage } from "../contexts/languageContext.jsx";
+import langData from "../assets/lang.json";
 
 const StyledComponents = Styled.header`
     width: 100%;
@@ -56,7 +58,7 @@ const StyledNavigation = Styled.nav`
         }
     }
 
-    @media screen and (max-width: 490px) {
+    @media screen and (max-width: 600px) {
         position: fixed;
         top: 70px;
         left: ${(props) => (props.isburgeropen ? "0" : "-100%")};
@@ -145,7 +147,7 @@ const StyledBurgerMenu = Styled.div`
         }
     }
 
-    @media screen and (max-width: 490px) {
+    @media screen and (max-width: 600px) {
         display: block;
     }
 `;
@@ -153,14 +155,11 @@ const StyledBurgerMenu = Styled.div`
 const Header = () => {
   const [isLnaguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
+  const { changeLanguage, language, whiteList } = useLanguage();
 
   const toggleLanguageMenu = () => {
     setIsLanguageMenuOpen(!isLnaguageMenuOpen);
     if (isLnaguageMenuOpen) toggleBurgerMenu();
-  };
-
-  const handleLanguageChange = () => {
-    console.log("Language changed");
   };
 
   const toggleBurgerMenu = () => {
@@ -175,25 +174,36 @@ const Header = () => {
         </Link>
         <StyledNavigation isburgeropen={isBurgerMenuOpen}>
           <Link onClick={toggleBurgerMenu} to="/">
-            Home
+            {langData[language].home}
           </Link>
           <Link onClick={toggleBurgerMenu} to="/recipes">
-            Recipes
+            {langData[language].recipes}
           </Link>
           <Link onClick={toggleBurgerMenu} to="/login">
-            Login
+            {langData[language].login}
           </Link>
           <Link onClick={toggleBurgerMenu} to="/register">
-            Register
+            {langData[language].register}
           </Link>
           <StyledLanguagePicker
             islnaguagemenuopen={isLnaguageMenuOpen}
             onClick={toggleLanguageMenu}
           >
-            EN
+            {language}
             <div>
-              <button onClick={handleLanguageChange}>ES</button>
-              <button onClick={handleLanguageChange}>CA</button>
+              {whiteList.map((lang) => {
+                if (lang === language) return null;
+                return (
+                  <button
+                    key={lang}
+                    onClick={() => {
+                      changeLanguage(lang);
+                    }}
+                  >
+                    {lang}
+                  </button>
+                );
+              })}
             </div>
           </StyledLanguagePicker>
         </StyledNavigation>
