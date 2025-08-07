@@ -179,10 +179,9 @@ const StyledContentText = Styled.div`
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    /* align-content: center; */
-    justify-content: center;
-    align-items: center;
     @media only screen and (max-width: 1200px) {
+      justify-content: center;
+      align-items: center;
       margin-top: 5em;
     }
 `;
