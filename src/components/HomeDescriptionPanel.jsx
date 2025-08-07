@@ -7,19 +7,17 @@ import { useNavigate } from 'react-router-dom';
 const StyledSection = Styled.section`
   border-top: 0.5px #3C3C3C solid;
   border-bottom: 0.5px #3C3C3C solid;
-  padding-left: 86px;
+  padding-left: 5em;
+  padding-bottom: 5em;
 
   display: flex;
   justify-content: space-between;
-  @media only screen and (max-width: 1000px) {
-    padding-left: 56px;
-    padding-right: 56px;
-  }
+  text-align: center;
 
   @media only screen and (max-width: 1200px) {
-    padding-right: 86px;
     flex-direction:column;
     align-items: anchor-center;
+    padding-right: 5em;
   }
 `;
 
@@ -34,9 +32,10 @@ const StyledMainIMG = Styled.img`
   max-width: 803.72px;
   height: 557.5px;
   margin-left: 10px;
-  border-radius: 18px;
-  @media only screen and (max-width: 1000px) {
+  border-radius: 0px 0px 0px 18px;
+  @media only screen and (max-width: 1200px) {
     height: auto;
+    border-radius: 18px;
   }
 `;
 
@@ -80,6 +79,7 @@ const StyledParagraph = Styled.p`
 const StyledButtonsContent = Styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
 `;
 

@@ -4,15 +4,16 @@ import { FaCheck } from "react-icons/fa";
 const StyledSection = Styled.section`
   border-top: 0.5px #3C3C3C solid;
   border-bottom: 0.5px #3C3C3C solid;
-  padding: 42.5px;
-  padding-left: 86px;
-  padding-right: 86px;
+  padding-left: 5em;
+  padding-right: 5em;
+  padding-top: 2.5em;
+  padding-bottom : 2.5em;
 
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
   justify-content: center;
-  width:100%
+  width:100%;
 `;
 const StyledSingularityDiv = Styled.div`
     display: flex;
@@ -28,7 +29,7 @@ const StyledSingularity = Styled.h1`
   line-height: 29px;
   letter-spacing: -0.02em;
 
-  min-width: 200px  ;
+  min-width: 200px;
 
   color: #000000;
 
