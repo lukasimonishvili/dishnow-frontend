@@ -26,7 +26,10 @@
     "confirmPassword": "Confirm password",
     "confirmPasswordRequired": "This field is required",
     "passwordsDontMatch": "Passwords do not match",
-    "alreadyMemeber": "Already a member?"
+    "alreadyMemeber": "Already a member?",
+    "loginWithGoogle": "Sign in with Google",
+    "loginWithFacebook": "Sign in with Facebook",
+    "dontHaveAccount": "Don't have account yet?"
   },
   "ES": {
     "home": "Inicio",
@@ -55,7 +58,10 @@
     "confirmPassword": "Confirmar contraseña",
     "confirmPasswordRequired": "Este campo es obligatorio",
     "passwordsDontMatch": "Las contraseñas no coinciden",
-    "alreadyMemeber": "¿Ya eres miembro?"
+    "alreadyMemeber": "¿Ya eres miembro?",
+    "loginWithGoogle": "Iniciar sesión con Google",
+    "loginWithFacebook": "Iniciar sesión con Facebook",
+    "dontHaveAccount": "¿Aún no tienes una cuenta?"
   },
   "CA": {
     "home": "Inici",
@@ -84,6 +90,9 @@
     "confirmPassword": "Confirma la contrasenya",
     "confirmPasswordRequired": "Aquest camp és obligatori",
     "passwordsDontMatch": "Les contrasenyes no coincideixen",
-    "alreadyMemeber": "Ja ets membre?"
+    "alreadyMemeber": "Ja ets membre?",
+    "loginWithGoogle": "Inicia sessió amb Google",
+    "loginWithFacebook": "Inicia sessió amb Facebook",
+    "dontHaveAccount": "Encara no tens un compte?"
   }
 }
