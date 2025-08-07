@@ -3,8 +3,7 @@ import Styled from "styled-components";
 
 const StyledButton = Styled.button`
     background: ${(props) => (props.color)};
-    border-radius: 6px;
-    
+    border-radius: ${(props) => props.border_radius || "6px"};
     font-family: 'Manrope';
     font-style: normal;
     font-weight: 700;
@@ -24,10 +23,10 @@ const StyledButton = Styled.button`
   }
 `;
 
-const Button = ({ input_text, color, text_color, on_click_function }) => {
+const Button = ({ input_text, color, text_color, on_click_function, border_radius }) => {
 
     return <>
-    <StyledButton color={color} text_color={text_color} onClick={on_click_function}>{input_text}</StyledButton>
+    <StyledButton border_radius={border_radius} color={color} text_color={text_color} onClick={on_click_function}>{input_text}</StyledButton>
     </>
 
 };
