@@ -29,7 +29,21 @@
     "alreadyMemeber": "Already a member?",
     "loginWithGoogle": "Sign in with Google",
     "loginWithFacebook": "Sign in with Facebook",
-    "dontHaveAccount": "Don't have account yet?"
+    "dontHaveAccount": "Don't have account yet?",
+    "homeDesSubTitle": "EASY COOKING WITH WHAT YOU ALREADY HAVE",
+    "homeDesTitle": "Discover delicious recipes<br/>With what you already have at <span>Home</span>",
+    "homeDesParagraph": "Enter your ingredients and find quick, delicious, and hassle-free recipes.",
+    "explore": "Explore",
+    "easyToUse": "Easy to <span>Use</span>",
+    "amountRecipesPromo": "1000+ <span>Recipes</span>",
+    "eatBetterNow": "Eat <span>Better</span> now",
+    "improveYourLife": "Improve your <span>Life</span>",
+    "homeWhyUsSubTittle": "Ingredient-Based Recipes",
+    "homeWhyUsTittle": "Why Us?",
+    "homeWhyUsText": "Discover personalized recipes based on the ingredients you have at home.<br/>Save time, avoid waste, and cook delicious dishes without the hassle.",
+    "homeWhyUsLiOne": "<span>Intuitive</span>  interface.",
+    "homeWhyUsLiTwo": "Healthy and <span>delicious</span> recipes to eat.",
+    "homeWhyUsLiThre": "<span>Quick</span> and easy recipes, specially chosen for you based on what you already have available."
   },
   "ES": {
     "home": "Inicio",
@@ -61,7 +75,21 @@
     "alreadyMemeber": "¿Ya eres miembro?",
     "loginWithGoogle": "Iniciar sesión con Google",
     "loginWithFacebook": "Iniciar sesión con Facebook",
-    "dontHaveAccount": "¿Aún no tienes una cuenta?"
+    "dontHaveAccount": "¿Aún no tienes una cuenta?",
+    "homeDesSubTitle": "COCINA FÁCIL CON LO QUE YA TIENES",
+    "homeDesTitle": "Descubre recetas deliciosas<br/>Con lo que ya tienes en <span>Casa</span>",
+    "homeDesParagraph": "Introduce tus ingredientes y encuentra recetas rápidas, deliciosas y sin complicaciones.",
+    "explore": "Explorar",
+    "easyToUse": "Fácil de <span>Usar</span>",
+    "amountRecipesPromo": "1000+ <span>Recetas</span>",
+    "eatBetterNow": "Comer sera <span>Mejor</span> ahora",
+    "improveYourLife": "Mejora tu <span>Vida</span>",
+    "homeWhyUsSubTittle": "Recetas según tus ingredientes",
+    "homeWhyUsTittle": "¿Por qué nosotros?",
+    "homeWhyUsText": "Descubre recetas personalizadas basadas en los ingredientes que tienes en casa.<br/>Ahorra tiempo, evita el desperdicio y cocina platos deliciosos sin complicaciones.",
+    "homeWhyUsLiOne": "Interfaz <span>intuitiva</span>.",
+    "homeWhyUsLiTwo": "Recetas <span>deliciosas</span> y saludables para comer.",
+    "homeWhyUsLiThre": "Recetas <span>rápidas</span> y fáciles, especialmente seleccionadas para ti según lo que ya tienes disponible."
   },
   "CA": {
     "home": "Inici",
@@ -93,6 +121,20 @@
     "alreadyMemeber": "Ja ets membre?",
     "loginWithGoogle": "Inicia sessió amb Google",
     "loginWithFacebook": "Inicia sessió amb Facebook",
-    "dontHaveAccount": "Encara no tens un compte?"
+    "dontHaveAccount": "Encara no tens un compte?",
+    "homeDesSubTitle": "CUINA FÀCIL AMB EL QUE JA TENS",
+    "homeDesTitle": "Descobreix receptes delicioses<br/>Amb el que ja tens a <span>Casa</span>",
+    "homeDesParagraph": "Introdueix els teus ingredients i troba receptes ràpides, delicioses i sense complicacions.",
+    "explore": "Explora",
+    "easyToUse": "Fàcil de <span>Fer servir</span>",
+    "amountRecipesPromo": "1000+ <span>Receptes</span>",
+    "eatBetterNow": "Menja <span>Millor</span> ara",
+    "improveYourLife": "Millora la teva <span>Vida</span>",
+    "homeWhyUsSubTittle": "Receptes segons els teus ingredients",
+    "homeWhyUsTittle": "Per què nosaltres?",
+    "homeWhyUsText": "Descobreix receptes personalitzades basades en els ingredients que tens a casa.<br/>Estalvia temps, evita el malbaratament i cuina plats deliciosos sense complicacions.",
+    "homeWhyUsLiOne": "Interfície <span>intuitiva</span>.",
+    "homeWhyUsLiTwo": "Receptes <span>delicioses</span> i sanes per menjar.",
+    "homeWhyUsLiThre": "Receptes <span>ràpides</span> i fàcils, especialment seleccionades per a tu segons el que ja tens disponible."
   }
 }

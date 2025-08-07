@@ -2,6 +2,8 @@ import woman_home from "../assets/img/home_woman.png";
 import Styled from "styled-components";
 import Button from "./Button";
 import { useNavigate } from 'react-router-dom';
+import { useLanguage } from "../contexts/languageContext.jsx";
+import langData from "../assets/lang.json";
 
 
 const StyledSection = Styled.section`
@@ -12,9 +14,9 @@ const StyledSection = Styled.section`
 
   display: flex;
   justify-content: space-between;
-  text-align: center;
-
+  
   @media only screen and (max-width: 1200px) {
+    text-align: center;
     flex-direction:column;
     align-items: anchor-center;
     padding-right: 5em;
@@ -85,7 +87,9 @@ const StyledButtonsContent = Styled.div`
 
 const HomeDescriptionPanel = () => {
   const navigate = useNavigate();
+  const {language} = useLanguage();
 
+  
   const ExploreHandle = () => {
     navigate('/recipes'); 
   };
@@ -97,18 +101,16 @@ const HomeDescriptionPanel = () => {
   return <>
     <StyledSection>
       <StyleMainDivisor>
-        <StyledSubTittle>EASY COOKING WITH WHAT YOU ALREADY HAVE</StyledSubTittle>
-        <StyledTittle>
-          Discover delicious recipes<br/>
-          With what you already have at <span>Home</span>
+        <StyledSubTittle>{langData[language].homeDesSubTitle}</StyledSubTittle>
+        <StyledTittle dangerouslySetInnerHTML={{ __html: langData[language].homeDesTitle }} >
         </StyledTittle>
         <StyledParagraph>
-          Enter your ingredients and find quick, delicious, and hassle-free recipes.
+          {langData[language].homeDesParagraph}
         </StyledParagraph>
 
         <StyledButtonsContent>
-          <Button input_text="Explore" color="#FC8800" text_color="#ffffff" on_click_function={ExploreHandle} />
-          <Button input_text="Log in" color="#ffffff00" text_color="#000000" on_click_function={LogInHandle} />
+          <Button input_text={langData[language].explore} color="#FC8800" text_color="#ffffff" on_click_function={ExploreHandle} />
+          <Button input_text={langData[language].login} color="#ffffff00" text_color="#000000" on_click_function={LogInHandle} />
         </StyledButtonsContent>
 
       </StyleMainDivisor>
