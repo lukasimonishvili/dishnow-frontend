@@ -43,7 +43,9 @@
     "homeWhyUsText": "Discover personalized recipes based on the ingredients you have at home.<br/>Save time, avoid waste, and cook delicious dishes without the hassle.",
     "homeWhyUsLiOne": "<span>Intuitive</span>  interface.",
     "homeWhyUsLiTwo": "Healthy and <span>delicious</span> recipes to eat.",
-    "homeWhyUsLiThre": "<span>Quick</span> and easy recipes, specially chosen for you based on what you already have available."
+    "homeWhyUsLiThre": "<span>Quick</span> and easy recipes, specially chosen for you based on what you already have available.",
+    "oppsPageNotFound": "Opps! Page Not Found",
+    "goBackHome": "BACK TO HOME"
   },
   "ES": {
     "home": "Inicio",
@@ -89,7 +91,9 @@
     "homeWhyUsText": "Descubre recetas personalizadas basadas en los ingredientes que tienes en casa.<br/>Ahorra tiempo, evita el desperdicio y cocina platos deliciosos sin complicaciones.",
     "homeWhyUsLiOne": "Interfaz <span>intuitiva</span>.",
     "homeWhyUsLiTwo": "Recetas <span>deliciosas</span> y saludables para comer.",
-    "homeWhyUsLiThre": "Recetas <span>rápidas</span> y fáciles, especialmente seleccionadas para ti según lo que ya tienes disponible."
+    "homeWhyUsLiThre": "Recetas <span>rápidas</span> y fáciles, especialmente seleccionadas para ti según lo que ya tienes disponible.",
+    "oppsPageNotFound": "¡Vaya! Página no encontrada",
+    "goBackHome": "VOLVER AL INICIO"
   },
   "CA": {
     "home": "Inici",
@@ -135,6 +139,8 @@
     "homeWhyUsText": "Descobreix receptes personalitzades basades en els ingredients que tens a casa.<br/>Estalvia temps, evita el malbaratament i cuina plats deliciosos sense complicacions.",
     "homeWhyUsLiOne": "Interfície <span>intuitiva</span>.",
     "homeWhyUsLiTwo": "Receptes <span>delicioses</span> i sanes per menjar.",
-    "homeWhyUsLiThre": "Receptes <span>ràpides</span> i fàcils, especialment seleccionades per a tu segons el que ja tens disponible."
+    "homeWhyUsLiThre": "Receptes <span>ràpides</span> i fàcils, especialment seleccionades per a tu segons el que ja tens disponible.",
+    "oppsPageNotFound": "Vaja! Pàgina no trobada",
+    "goBackHome": "TORNAR A L'INICI"
   }
 }
