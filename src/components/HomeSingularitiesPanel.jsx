@@ -1,6 +1,9 @@
 import Styled from "styled-components";
 import { FaCheck } from "react-icons/fa";
 
+import { useLanguage } from "../contexts/languageContext.jsx";
+import langData from "../assets/lang.json";
+
 const StyledSection = Styled.section`
   border-top: 0.5px #3C3C3C solid;
   border-bottom: 0.5px #3C3C3C solid;
@@ -11,7 +14,7 @@ const StyledSection = Styled.section`
 
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 1em;
   justify-content: center;
   width:100%;
 `;
@@ -19,7 +22,7 @@ const StyledSingularityDiv = Styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
+    gap: 0.5em;
 `;
 const StyledSingularity = Styled.h1`
   font-family: 'TT Hoves';
@@ -40,37 +43,29 @@ const StyledSingularity = Styled.h1`
 
 
 const HomeSingularitiesPanel = () => {
-  
+  const {language} = useLanguage();
+
   return <>
     <StyledSection>
 
       <StyledSingularityDiv>
-        <FaCheck></FaCheck>
-        <StyledSingularity>
-          Easy to <span>Use</span>
-        </StyledSingularity>
+        <FaCheck/>
+        <StyledSingularity dangerouslySetInnerHTML={{ __html: langData[language].easyToUse}}/>
       </StyledSingularityDiv>
       
       <StyledSingularityDiv>
-        <FaCheck></FaCheck>
-        <StyledSingularity>
-          1000+ <span>Recipes</span>
-        </StyledSingularity>
-      </StyledSingularityDiv>
-      
-      
-      <StyledSingularityDiv>
-        <FaCheck></FaCheck>
-        <StyledSingularity>
-          Eat <span>Better</span> now
-        </StyledSingularity>
+        <FaCheck/>
+        <StyledSingularity dangerouslySetInnerHTML={{ __html: langData[language].amountRecipesPromo}}/>
       </StyledSingularityDiv>
       
       <StyledSingularityDiv>
-        <FaCheck></FaCheck>
-        <StyledSingularity>
-          Improve your <span>Life</span>
-        </StyledSingularity>
+        <FaCheck/>
+        <StyledSingularity dangerouslySetInnerHTML={{ __html: langData[language].eatBetterNow}}/>
+      </StyledSingularityDiv>
+      
+      <StyledSingularityDiv>
+        <FaCheck/>
+        <StyledSingularity dangerouslySetInnerHTML={{ __html: langData[language].improveYourLife}}/>
       </StyledSingularityDiv>
 
     </StyledSection>

@@ -5,6 +5,9 @@ import CirclesOnCircles from "../assets/img/CirclesOnCircles.png";
 import FoodTable from "../assets/img/FoodTable.png";
 import FoodKorean from "../assets/img/FoodKorean.png";
 
+import { useLanguage } from "../contexts/languageContext.jsx";
+import langData from "../assets/lang.json";
+
 const StyledSection = Styled.section`
   border-top: 0.5px #3C3C3C solid;
   border-bottom: 0.5px #3C3C3C solid;
@@ -185,6 +188,7 @@ const StyledContentText = Styled.div`
 `;
 
 const HomeWhyUs = () => {
+  const {language} = useLanguage();
 
   return <>
     <StyledSection>
@@ -199,19 +203,16 @@ const HomeWhyUs = () => {
           <StyleImageTemplate src={FoodKorean} alt="Korean food"/>
         </StyleImageKoreanContainer>
         
-
-        
       </FoodImagesContent>
 
       <StyledContentText>
-        <StyledSubTittle>Ingredient-Based Recipes</StyledSubTittle>
-        <StyledTittle>Why Us?</StyledTittle>
-        <StyledText>Discover personalized recipes based on the ingredients you have at home.
-        <br/>Save time, avoid waste, and cook delicious dishes without the hassle.</StyledText>
+        <StyledSubTittle>{langData[language].homeWhyUsSubTittle}</StyledSubTittle>
+        <StyledTittle>{langData[language].homeWhyUsTittle}</StyledTittle>
+        <StyledText dangerouslySetInnerHTML={{ __html: langData[language].homeWhyUsText }} />
         <StyledUL>
-          <StyledLi>Intuitive interface.</StyledLi>
-          <StyledLi>Healthy and delicious recipes to eat.</StyledLi>
-          <StyledLi>Quick and easy recipes, specially chosen for you based on what you already have available.</StyledLi>
+          <StyledLi dangerouslySetInnerHTML={{ __html: langData[language].homeWhyUsLiOne }} />
+          <StyledLi dangerouslySetInnerHTML={{ __html: langData[language].homeWhyUsLiTwo }} />
+          <StyledLi dangerouslySetInnerHTML={{ __html: langData[language].homeWhyUsLiThre }} />
         </StyledUL>
       </StyledContentText>
 
