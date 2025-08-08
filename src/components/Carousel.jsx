@@ -165,7 +165,8 @@ const Carousel = ({ images_list, top_subtitles, images_titles, bottom_subtittles
 
         </StyledCenterContainer>
     }
-    const imageToLoad = carouselSize > 0 ? images_list[carouselPosition] : defaultFoodBG;
+    var imageToLoad = carouselSize > 0 ? images_list[carouselPosition] : "";
+    imageToLoad = imageToLoad == "" ? defaultFoodBG : imageToLoad;
     const topSubTittle = carouselSize > 0 ? top_subtitles[carouselPosition] : "Have a delicious meal";
     const bottomSubTittle = carouselSize > 0 ? bottom_subtittles[carouselPosition] : "";
     const Tittle = carouselSize > 0 ? images_titles[carouselPosition] : "Choose what you most want to cook";
