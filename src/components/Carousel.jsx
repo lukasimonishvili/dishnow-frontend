@@ -139,7 +139,6 @@ const Carousel = ({ images_list, top_subtitles, images_titles, bottom_subtittles
     }
 
     var buttonsSection = "";
-    carouselSize = 10;
     if (carouselSize > 0) {
         var spheres = [];
         for (let index = 0; index < carouselSize; index++) {
@@ -166,7 +165,6 @@ const Carousel = ({ images_list, top_subtitles, images_titles, bottom_subtittles
 
         </StyledCenterContainer>
     }
-    carouselSize = 0;
     const imageToLoad = carouselSize > 0 ? images_list[carouselPosition] : defaultFoodBG;
     const topSubTittle = carouselSize > 0 ? top_subtitles[carouselPosition] : "Have a delicious meal";
     const bottomSubTittle = carouselSize > 0 ? bottom_subtittles[carouselPosition] : "";
