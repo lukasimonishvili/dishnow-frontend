@@ -111,6 +111,7 @@ const StyledLanguagePicker = Styled.button`
         left:-25%;
         width: 150%;
         background: white;
+        box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
         z-index: 52;
         transform: ${(props) =>
           props.islnaguagemenuopen ? "scale(1)" : "scale(0)"};
