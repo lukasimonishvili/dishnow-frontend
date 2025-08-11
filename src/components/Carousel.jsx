@@ -1,13 +1,15 @@
-import Styled from "styled-components";
-import { useState } from "react";
+import Styled, { keyframes, css } from "styled-components";
+import { useState, useEffect, useRef } from "react";
 
 import { FaCircle, FaRegCircle, FaRegArrowAltCircleRight, FaRegArrowAltCircleLeft } from "react-icons/fa";
 import defaultFoodBG from "../assets/img/test_food_carousel.jpg";
+import { useLanguage } from "../contexts/languageContext.jsx";
+import langData from "../assets/lang.json";
 
 
 const StyledCarouselBody = Styled.div`
     height: ${(props) => props.height || "255px"};
-    margin: ${(props) => props.margin || "5em 1em"};
+    margin: ${(props) => props.margin || "5em 1em 1em"};
     border-radius: ${(props) => props.border_radius || "2em"};
     overflow: hidden;
     position:relative;
@@ -27,12 +29,33 @@ const StyledTextsContent = Styled.div`
     justify-content: space-between;
 `;
 
+const slideInFromRight = keyframes`
+  0% {
+    transform: translateX(100%);  // Comienza fuera de la pantalla (a la derecha)
+  }
+  100% {
+    transform: translateX(0);  // Termina en su posición original
+  }
+`;
+const blurToClear = keyframes`
+  0% {
+    filter: blur(1em);
+  }
+  100% {
+    filter: blur(0);
+  }
+`;
+
 const StyledCarouselImg = Styled.div`
     background-image: linear-gradient(to Right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.0)), ${(props) => props.loaded_image ? `url(${props.loaded_image})` : "none"};
     background-size: cover;
     background-position: center;
     width: 100%;
     height: 100%;
+    transition: all 1s;
+    ${(props) => props.$isAnimating && css`
+        animation: ${blurToClear} 1s ease-in-out forwards;
+    `}
 `;
 
 const StyledTopSubTittle = Styled.h4`
@@ -92,11 +115,17 @@ const StyledTittle = Styled.h4`
 
 const StyledButton = Styled.button`
 
-&:focus {
-    outline: 2px solid white; /* o el color que quieras */
-    outline-offset: 2px;
-    border-radius: 2px;
-  }
+    &:focus {
+        outline: 2px solid white; /* o el color que quieras */
+        outline-offset: 2px;
+        border-radius: 2px;
+    }
+    & > svg{
+        color: white;
+    }
+    &:hover > svg{
+        color: #DC582A;
+    }
 `;
 
 const StyledCenterContainer = Styled.div`
@@ -115,8 +144,10 @@ const StyledCenterContainer = Styled.div`
 
 const Carousel = ({ images_list, top_subtitles, images_titles, bottom_subtittles }) => {
     var carouselSize = images_list ? images_list.length : -1;
-   
+
     const [carouselPosition, setCarouselPosition] = useState(0);
+    const [isAnimating, setIsAnimating] = useState(false);
+    const {language} = useLanguage();
 
     const LeftHandle = () => {
         UpdateCarouselPosition(-1);
@@ -126,34 +157,74 @@ const Carousel = ({ images_list, top_subtitles, images_titles, bottom_subtittles
         UpdateCarouselPosition(1);
     }
 
-    const UpdateCarouselPosition = (amunt_to_add) => {
-        let new_position = carouselPosition + amunt_to_add;
-        if (new_position < 0) {
-            new_position = carouselSize > 0 ? carouselSize + new_position: 0;
-        } else if (new_position >= carouselSize) {
-            new_position = 0;
+    const intervalRef = useRef(null);
+    const intervalAnimRef = useRef(null);
+
+    const startInterval = () => {
+        // Evita crear múltiples intervalos
+        if (intervalRef.current === null) {
+            intervalRef.current = setInterval(() => {
+                RightHandle()
+            }, 5000);
         }
-        console.log("new pos: ", new_position);
-        
-        setCarouselPosition(new_position)
+    };
+
+    const triggerAnimation = () => {
+        setIsAnimating(true);
+        if (intervalAnimRef.current !== null){
+            clearInterval(intervalAnimRef.current);
+            intervalAnimRef.current = null;
+        }
+        intervalAnimRef.current = setTimeout(() => {
+            setIsAnimating(false);  // Luego, la activamos después de un pequeño retraso
+        }, 1000); // Ajusta el tiempo de retraso según lo necesites
+    };
+
+    const stopInterval = () => {
+        if (intervalRef.current !== null) {
+            clearInterval(intervalRef.current);
+            intervalRef.current = null;
+        }
+    };
+
+    useEffect(() => {
+        if (carouselSize > 0) {
+            startInterval();
+        }
+        return () => stopInterval();
+    }, [carouselSize]);
+
+    const UpdateCarouselPosition = (amount_to_add) => {
+        stopInterval();
+        setCarouselPosition(prevPosition => {
+            let new_position = prevPosition + amount_to_add;
+            if (new_position < 0) {
+                new_position = carouselSize > 0 ? carouselSize + new_position : 0;
+            } else if (new_position >= carouselSize) {
+                new_position = 0;
+            }
+            return new_position;
+        });
+        startInterval();
+        triggerAnimation();
     }
 
-    var buttonsSection = "";
+    var buttonsSection;
     if (carouselSize > 0) {
         var spheres = [];
         for (let index = 0; index < carouselSize; index++) {
-            if (index == carouselPosition){
-               spheres.push(<FaCircle color="#DC582A"></FaCircle>)
-            }else {
-               spheres.push(<FaRegCircle color="white"></FaRegCircle>)
+            if (index == carouselPosition) {
+                spheres.push(<FaCircle key={index} color="#DC582A"></FaCircle>)
+            } else {
+                spheres.push(<FaRegCircle key={index} color="white"></FaRegCircle>)
             }
         }
-        const buttonLeft = <StyledButton>
-                    <FaRegArrowAltCircleLeft onClick={LeftHandle} color="#DC582A" size="2em"></FaRegArrowAltCircleLeft>
-                </StyledButton>
+        const buttonLeft = <StyledButton onClick={LeftHandle}>
+            <FaRegArrowAltCircleLeft size="2em"></FaRegArrowAltCircleLeft>
+        </StyledButton>
         const buttonRight = <StyledButton onClick={RightHandle}>
-                    <FaRegArrowAltCircleRight color="#DC582A" size="2em"></FaRegArrowAltCircleRight>
-                </StyledButton>
+            <FaRegArrowAltCircleRight size="2em"></FaRegArrowAltCircleRight>
+        </StyledButton>
         buttonsSection = <StyledCenterContainer>
             <div>
                 {buttonLeft}
@@ -167,13 +238,13 @@ const Carousel = ({ images_list, top_subtitles, images_titles, bottom_subtittles
     }
     var imageToLoad = carouselSize > 0 ? images_list[carouselPosition] : "";
     imageToLoad = imageToLoad == "" ? defaultFoodBG : imageToLoad;
-    const topSubTittle = carouselSize > 0 ? top_subtitles[carouselPosition] : "Have a delicious meal";
+    const topSubTittle = carouselSize > 0 ? top_subtitles[carouselPosition] : langData[language].carouselDefaultSubTittle;
     const bottomSubTittle = carouselSize > 0 ? bottom_subtittles[carouselPosition] : "";
-    const Tittle = carouselSize > 0 ? images_titles[carouselPosition] : "Choose what you most want to cook";
+    const Tittle = carouselSize > 0 ? images_titles[carouselPosition] : langData[language].carouselDefaultTittle;
 
     return <>
         <StyledCarouselBody>
-            <StyledCarouselImg loaded_image={imageToLoad} />
+            <StyledCarouselImg $isAnimating={isAnimating} loaded_image={imageToLoad} />
             <StyledTextsContent>
                 <div>
                     <StyledTopSubTittle>{topSubTittle}</StyledTopSubTittle>
