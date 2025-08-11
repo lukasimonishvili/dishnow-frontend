@@ -4,6 +4,7 @@ import { useLanguage } from "../contexts/languageContext.jsx";
 import langData from "../assets/lang.json";
 import Carousel from "../components/Carousel.jsx";
 import CheckBoxList from "../components/CheckBoxList.jsx";
+import MiniPlate from "../components/MiniPlate.jsx";
 
 const StyledOptionsTitle = Styled.h1`
 font-family: 'TT Hoves';
@@ -18,6 +19,8 @@ color: #252525;
 
 const StyledFilterContent = Styled.div`
     width: fit-content;
+    min-width: 250px;
+    height: fit-content;
     padding-right: 2em;
     display:flex;
     flex-direction:column;
@@ -26,7 +29,6 @@ const StyledFilterContent = Styled.div`
 const StyledDualContent = Styled.div`
     margin: 1em;
     display:flex;
-    background-color: red;
     justify-content: space-between;
     @media only screen and (max-width: 600px){
         flex-direction:column;
@@ -35,13 +37,14 @@ const StyledDualContent = Styled.div`
             text-align: center;
         }
     }
-`;
+    `;
 const StyledRecipeContents = Styled.div`
-    display:flex;
-    background-color: blue;
     width: 100%;
-    max-width: 950px;
     min-height: 320px;
+    
+    display:flex;
+    flex-wrap:wrap;
+    gap: 1em;
     
 `;
 
@@ -76,10 +79,24 @@ const Recipes = () => {
                         "Tomates", "Cebolla"
                     ]
                 }/>
+                <CheckBoxList id={"r_china"} title="china" optionsList={
+                    [
+                        "Caballos","Gatos", "Perros"
+                    ]
+                }/>
 
 
             </StyledFilterContent>
             <StyledRecipeContents>
+
+                <MiniPlate id="2" ></MiniPlate>
+                <MiniPlate id="2" ></MiniPlate>
+                <MiniPlate id="2" ></MiniPlate>
+                <MiniPlate id="2" ></MiniPlate>
+                <MiniPlate id="2" ></MiniPlate>
+                <MiniPlate id="2" ></MiniPlate>
+                <MiniPlate id="2" ></MiniPlate>
+
 
             </StyledRecipeContents>
         </StyledDualContent>
