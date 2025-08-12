@@ -29,7 +29,7 @@
     "alreadyMemeber": "Already a member?",
     "loginWithGoogle": "Sign in with Google",
     "loginWithFacebook": "Sign in with Facebook",
-    "dontHaveAccount": "Don't have account yet?",
+    "forgotPassword": "forgot password",
     "homeDesSubTitle": "EASY COOKING WITH WHAT YOU ALREADY HAVE",
     "homeDesTitle": "Discover delicious recipes<br/>With what you already have at <span>Home</span>",
     "homeDesParagraph": "Enter your ingredients and find quick, delicious, and hassle-free recipes.",
@@ -47,7 +47,9 @@
     "oppsPageNotFound": "Opps! Page Not Found",
     "goBackHome": "BACK TO HOME",
     "carouselDefaultSubTittle" : "Have a delicious meal",
-    "carouselDefaultTittle" : "Choose what you most want to cook"
+    "carouselDefaultTittle" : "Choose what you most want to cook",
+    "changePassword": "Change password",
+    "send": "send"
   },
   "ES": {
     "home": "Inicio",
@@ -79,7 +81,7 @@
     "alreadyMemeber": "¿Ya eres miembro?",
     "loginWithGoogle": "Iniciar sesión con Google",
     "loginWithFacebook": "Iniciar sesión con Facebook",
-    "dontHaveAccount": "¿Aún no tienes una cuenta?",
+    "forgotPassword": "¿Olvidaste tu contraseña",
     "homeDesSubTitle": "COCINA FÁCIL CON LO QUE YA TIENES",
     "homeDesTitle": "Descubre recetas deliciosas<br/>Con lo que ya tienes en <span>Casa</span>",
     "homeDesParagraph": "Introduce tus ingredientes y encuentra recetas rápidas, deliciosas y sin complicaciones.",
@@ -97,7 +99,9 @@
     "oppsPageNotFound": "¡Vaya! Página no encontrada",
     "goBackHome": "VOLVER AL INICIO",
     "carouselDefaultSubTittle": "Disfruta de una comida deliciosa",
-    "carouselDefaultTittle": "Elige qué quieres cocinar más"
+    "carouselDefaultTittle": "Elige qué quieres cocinar más",
+    "changePassword": "Cambiar contraseña",
+    "send": "Enviar"
   },
   "CA": {
     "home": "Inici",
@@ -129,7 +133,7 @@
     "alreadyMemeber": "Ja ets membre?",
     "loginWithGoogle": "Inicia sessió amb Google",
     "loginWithFacebook": "Inicia sessió amb Facebook",
-    "dontHaveAccount": "Encara no tens un compte?",
+    "forgotPassword": "EHas oblidat la contrasenya",
     "homeDesSubTitle": "CUINA FÀCIL AMB EL QUE JA TENS",
     "homeDesTitle": "Descobreix receptes delicioses<br/>Amb el que ja tens a <span>Casa</span>",
     "homeDesParagraph": "Introdueix els teus ingredients i troba receptes ràpides, delicioses i sense complicacions.",
@@ -147,6 +151,8 @@
     "oppsPageNotFound": "Vaja! Pàgina no trobada",
     "goBackHome": "TORNAR A L'INICI",
     "carouselDefaultSubTittle": "Gaudeix d'un àpat deliciós",
-    "carouselDefaultTittle": "Tria què vols cuinar més"
+    "carouselDefaultTittle": "Tria què vols cuinar més",
+    "changePassword": "Canviar contrasenya",
+    "send": "Enviar"
   }
 }
