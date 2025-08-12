@@ -77,7 +77,7 @@ const StyledNavigation = Styled.nav`
     }
 `;
 
-const StyledLanguagePicker = Styled.div`
+const StyledLanguagePicker = Styled.button`
     position: relative;
     font-family: 'Space Grotesk';
     font-style: normal;
@@ -85,8 +85,13 @@ const StyledLanguagePicker = Styled.div`
     font-size: 16px;
     line-height: 20px;
     z-index: 52;
-    cursor: pointer;
+    padding-left:2px;
+    padding-right:2px;
 
+    cursor: pointer;
+    &:hover{
+      text-decoration: underline;
+    }
     &:after {
         content: "";
         position: fixed;
@@ -100,14 +105,41 @@ const StyledLanguagePicker = Styled.div`
     }
 
     & > div {
+        margin-top: 0.8em;
+        border-radius: 2px;
         position: absolute;
-        width: 100%;
-        background: #FFFFFF;
+        left:-25%;
+        width: 150%;
+        background: white;
+        box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
         z-index: 52;
         transform: ${(props) =>
           props.islnaguagemenuopen ? "scale(1)" : "scale(0)"};
         transition: transform 0.3s ease-in-out;
-    }
+        display:flex;
+        flex-direction:column;
+
+        padding-top: 3px;
+        padding-bottom: 3px;
+
+        & > button{
+            color:black;
+            &:hover{
+              text-decoration: underline;
+            }
+            &:focus {
+              outline: 2px solid #000; /* o el color que quieras */
+              border-radius: 2px;
+              outline-offset: 0px;
+            }
+        }
+      }
+
+      &:focus {
+        outline: 2px solid #000; /* o el color que quieras */
+        outline-offset: 2px;
+        border-radius: 2px;
+      }
 `;
 
 const StyledBurgerMenu = Styled.div`
