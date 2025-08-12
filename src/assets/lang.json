@@ -46,10 +46,12 @@
     "homeWhyUsLiThre": "<span>Quick</span> and easy recipes, specially chosen for you based on what you already have available.",
     "oppsPageNotFound": "Opps! Page Not Found",
     "goBackHome": "BACK TO HOME",
-    "carouselDefaultSubTittle" : "Have a delicious meal",
-    "carouselDefaultTittle" : "Choose what you most want to cook",
+    "carouselDefaultSubTittle": "Have a delicious meal",
+    "carouselDefaultTittle": "Choose what you most want to cook",
     "changePassword": "Change password",
-    "send": "send"
+    "send": "send",
+    "ingredients": "ingredients",
+    "description": "description"
   },
   "ES": {
     "home": "Inicio",
@@ -101,7 +103,9 @@
     "carouselDefaultSubTittle": "Disfruta de una comida deliciosa",
     "carouselDefaultTittle": "Elige qué quieres cocinar más",
     "changePassword": "Cambiar contraseña",
-    "send": "Enviar"
+    "send": "Enviar",
+    "ingredients": "ingredientes",
+    "description": "Descripción"
   },
   "CA": {
     "home": "Inici",
@@ -153,6 +157,8 @@
     "carouselDefaultSubTittle": "Gaudeix d'un àpat deliciós",
     "carouselDefaultTittle": "Tria què vols cuinar més",
     "changePassword": "Canviar contrasenya",
-    "send": "Enviar"
+    "send": "Enviar",
+    "ingredients": "ingredients",
+    "description": "Descripció"
   }
 }

@@ -6,6 +6,7 @@ import Register from "../pages/Register.jsx";
 import Recipes from "../pages/Recipes.jsx";
 import RecoverPassword from "../pages/RecoverPassword.jsx";
 import ForgotPassword from "../pages/ForgotPassword.jsx";
+import Recipe from "../pages/Recipe.jsx";
 
 
 const AppRouter = () => {
@@ -17,6 +18,7 @@ const AppRouter = () => {
       <Route path="/recipes" element={<Recipes />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/recover-password" element={<RecoverPassword />} />
+      <Route path="/recipe/:id" element={<Recipe />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
