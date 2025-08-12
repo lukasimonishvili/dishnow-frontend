@@ -1,8 +1,5 @@
 import Styled from "styled-components";
-import googleIcon from "../assets/img/google.png";
-import facebookIcon from "../assets/img/facebook.png";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 import { useLanguage } from "../contexts/languageContext.jsx";
 import langData from "../assets/lang.json";
 
@@ -29,63 +26,9 @@ const StyledLogin = Styled.div`
   }
 `;
 
-const StyledSocialButton = Styled.button`
-  display: block;
-  width: 100%;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #FFFFFF;
-  border-width: 1px 1px 2px 1px;
-  border-style: solid;
-  border-color: #E3E3E3;
-  border-radius: 15px;
-  margin-top: 16px;
-
-  & > img {
-    width: 20px;
-    height: 20px;
-  }
-  
-  & > span {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 145%;
-    color: #344054;
-    padding-left: 16px;
-  }
-`;
-
-const StyledDivider = Styled.div`
-  width: 100%;
-  height: 1px;
-  background: #F0F2F5;
-  margin: 46px 0;
-  position: relative;
-
-  &:after {
-    content: "${[(props) => props.content]}";
-    position: absolute;
-    width: 32px;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, -50%);
-    background: #FFFFFF;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    text-align: center;
-    color: #667185;
-  }
-`;
-
 const StyledForm = Styled.form`
   width: 100%;
+  padding-bottom: 50px;
 
   & > button {
     display: block;
@@ -148,26 +91,7 @@ const StyledInputWrapper = Styled.div`
   }
 `;
 
-const StyledRegisterWrapper = Styled.p`
-  width: 100%;
-  text-align: center;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #000000;
-  margin-top: 30px;
-  margin-bottom: 60px;
-
-  & > a {
-    font-weight: 600;
-    line-height: 145%;
-    color: #EB5017;
-  }
-`;
-
-const Login = () => {
+const ForgotPassword = () => {
   const {
     register,
     handleSubmit,
@@ -181,17 +105,7 @@ const Login = () => {
 
   return (
     <StyledLogin>
-      <h2>{langData[language].login}</h2>
-      <StyledSocialButton>
-        <img src={googleIcon} alt="" />
-        <span>{langData[language].loginWithGoogle}</span>
-      </StyledSocialButton>
-      <StyledSocialButton>
-        <img src={facebookIcon} alt="" />
-        <span>{langData[language].loginWithFacebook}</span>
-      </StyledSocialButton>
-
-      <StyledDivider content={langData[language].or} />
+      <h2>{langData[language].forgotPassword}</h2>
 
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
         <StyledInputWrapper error={errors.email}>
@@ -205,27 +119,11 @@ const Login = () => {
           />
           <span>{errors && errors.email ? errors.email.message : "NA"}</span>
         </StyledInputWrapper>
-        <StyledInputWrapper error={errors.password}>
-          <label htmlFor="password">{langData[language].password}</label>
-          <input
-            type="password"
-            id="password"
-            {...register("password", {
-              required: langData[language].passwordRequired,
-            })}
-          />
-          <span>
-            {errors && errors.password ? errors.password.message : "NA"}
-          </span>
-        </StyledInputWrapper>
 
-        <button>{langData[language].login}</button>
+        <button>{langData[language].send}</button>
       </StyledForm>
-      <StyledRegisterWrapper>
-        <Link to="/forgot-password">{langData[language].forgotPassword}?</Link>
-      </StyledRegisterWrapper>
     </StyledLogin>
   );
 };
 
-export default Login;
+export default ForgotPassword;

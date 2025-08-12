@@ -29,7 +29,7 @@
     "alreadyMemeber": "Already a member?",
     "loginWithGoogle": "Sign in with Google",
     "loginWithFacebook": "Sign in with Facebook",
-    "dontHaveAccount": "Don't have account yet?",
+    "forgotPassword": "forgot password",
     "homeDesSubTitle": "EASY COOKING WITH WHAT YOU ALREADY HAVE",
     "homeDesTitle": "Discover delicious recipes<br/>With what you already have at <span>Home</span>",
     "homeDesParagraph": "Enter your ingredients and find quick, delicious, and hassle-free recipes.",
@@ -45,7 +45,9 @@
     "homeWhyUsLiTwo": "Healthy and <span>delicious</span> recipes to eat.",
     "homeWhyUsLiThre": "<span>Quick</span> and easy recipes, specially chosen for you based on what you already have available.",
     "oppsPageNotFound": "Opps! Page Not Found",
-    "goBackHome": "BACK TO HOME"
+    "goBackHome": "BACK TO HOME",
+    "changePassword": "Change password",
+    "send": "send"
   },
   "ES": {
     "home": "Inicio",
@@ -77,7 +79,7 @@
     "alreadyMemeber": "¿Ya eres miembro?",
     "loginWithGoogle": "Iniciar sesión con Google",
     "loginWithFacebook": "Iniciar sesión con Facebook",
-    "dontHaveAccount": "¿Aún no tienes una cuenta?",
+    "forgotPassword": "¿Olvidaste tu contraseña",
     "homeDesSubTitle": "COCINA FÁCIL CON LO QUE YA TIENES",
     "homeDesTitle": "Descubre recetas deliciosas<br/>Con lo que ya tienes en <span>Casa</span>",
     "homeDesParagraph": "Introduce tus ingredientes y encuentra recetas rápidas, deliciosas y sin complicaciones.",
@@ -93,7 +95,9 @@
     "homeWhyUsLiTwo": "Recetas <span>deliciosas</span> y saludables para comer.",
     "homeWhyUsLiThre": "Recetas <span>rápidas</span> y fáciles, especialmente seleccionadas para ti según lo que ya tienes disponible.",
     "oppsPageNotFound": "¡Vaya! Página no encontrada",
-    "goBackHome": "VOLVER AL INICIO"
+    "goBackHome": "VOLVER AL INICIO",
+    "changePassword": "Cambiar contraseña",
+    "send": "Enviar"
   },
   "CA": {
     "home": "Inici",
@@ -125,7 +129,7 @@
     "alreadyMemeber": "Ja ets membre?",
     "loginWithGoogle": "Inicia sessió amb Google",
     "loginWithFacebook": "Inicia sessió amb Facebook",
-    "dontHaveAccount": "Encara no tens un compte?",
+    "forgotPassword": "EHas oblidat la contrasenya",
     "homeDesSubTitle": "CUINA FÀCIL AMB EL QUE JA TENS",
     "homeDesTitle": "Descobreix receptes delicioses<br/>Amb el que ja tens a <span>Casa</span>",
     "homeDesParagraph": "Introdueix els teus ingredients i troba receptes ràpides, delicioses i sense complicacions.",
@@ -141,6 +145,8 @@
     "homeWhyUsLiTwo": "Receptes <span>delicioses</span> i sanes per menjar.",
     "homeWhyUsLiThre": "Receptes <span>ràpides</span> i fàcils, especialment seleccionades per a tu segons el que ja tens disponible.",
     "oppsPageNotFound": "Vaja! Pàgina no trobada",
-    "goBackHome": "TORNAR A L'INICI"
+    "goBackHome": "TORNAR A L'INICI",
+    "changePassword": "Canviar contrasenya",
+    "send": "Enviar"
   }
 }
