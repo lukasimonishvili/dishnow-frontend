@@ -9,6 +9,10 @@ const StyledSlider = Styled.div`
   height: 428px;
   border-radius: 24px;
 
+  @media screen and (max-width: 580px) {
+    height: 300px;
+  }
+
   & > div {
     display: flex;
     position: absolute;
@@ -30,8 +34,7 @@ const StyledSliderItem = Styled.div`
   background-position: center;
 `;
 
-const RecipeSlider = () => {
-  const [sliderImages, setSliderImages] = useState([]);
+const RecipeSlider = ({ photos }) => {
   const [activeSlider, setActiveSlider] = useState(0);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
   const intervalRef = useRef(null);
@@ -51,19 +54,13 @@ const RecipeSlider = () => {
   };
 
   useEffect(() => {
-    const imageList = [
-      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
-      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
-      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg",
-    ];
-    setSliderImages(imageList);
     startSlider();
 
     return () => stopSlider();
   }, []);
 
   useEffect(() => {
-    if (activeSlider === sliderImages.length) {
+    if (activeSlider === photos.length) {
       setTimeout(() => {
         setTransitionEnabled(false);
         setActiveSlider(0);
@@ -77,12 +74,12 @@ const RecipeSlider = () => {
       sliderindex={activeSlider}
       transitionenabled={transitionEnabled}
     >
-      {sliderImages.length > 0 && (
+      {photos.length > 0 && (
         <div>
-          {sliderImages.map((img) => (
+          {photos.map((img) => (
             <StyledSliderItem key={img} image={img} />
           ))}
-          <StyledSliderItem image={sliderImages[0]} />
+          <StyledSliderItem image={photos[0]} />
         </div>
       )}
     </StyledSlider>
