@@ -46,6 +46,8 @@
     "homeWhyUsLiThre": "<span>Quick</span> and easy recipes, specially chosen for you based on what you already have available.",
     "oppsPageNotFound": "Opps! Page Not Found",
     "goBackHome": "BACK TO HOME",
+    "carouselDefaultSubTittle" : "Have a delicious meal",
+    "carouselDefaultTittle" : "Choose what you most want to cook",
     "changePassword": "Change password",
     "send": "send"
   },
@@ -96,6 +98,8 @@
     "homeWhyUsLiThre": "Recetas <span>rápidas</span> y fáciles, especialmente seleccionadas para ti según lo que ya tienes disponible.",
     "oppsPageNotFound": "¡Vaya! Página no encontrada",
     "goBackHome": "VOLVER AL INICIO",
+    "carouselDefaultSubTittle": "Disfruta de una comida deliciosa",
+    "carouselDefaultTittle": "Elige qué quieres cocinar más",
     "changePassword": "Cambiar contraseña",
     "send": "Enviar"
   },
@@ -146,6 +150,8 @@
     "homeWhyUsLiThre": "Receptes <span>ràpides</span> i fàcils, especialment seleccionades per a tu segons el que ja tens disponible.",
     "oppsPageNotFound": "Vaja! Pàgina no trobada",
     "goBackHome": "TORNAR A L'INICI",
+    "carouselDefaultSubTittle": "Gaudeix d'un àpat deliciós",
+    "carouselDefaultTittle": "Tria què vols cuinar més",
     "changePassword": "Canviar contrasenya",
     "send": "Enviar"
   }
