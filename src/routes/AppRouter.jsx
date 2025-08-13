@@ -11,6 +11,7 @@ import AdminPanel from "../pages/AdminPanel.jsx";
 import Categories from "../pages/Categories.jsx";
 import People from "../pages/People.jsx";
 import AdminRecipes from "../pages/AdminRecipes.jsx";
+import AdminRecipe from "../pages/AdminRecipe.jsx";
 
 const AppRouter = () => {
   return (
@@ -25,6 +26,7 @@ const AppRouter = () => {
       <Route path="admin" element={<AdminPanel />}>
         <Route path="categories" element={<Categories />} />
         <Route path="people" element={<People />} />
+        <Route path="recipe/:id" element={<AdminRecipe />} />
         <Route index element={<AdminRecipes />} />
       </Route>
       <Route path="*" element={<NotFound />} />
