@@ -139,6 +139,7 @@ const Recipe = () => {
         "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
         "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg",
       ],
+      status: "APPROVED",
     };
 
     setRecipe(recipeFromDB);
