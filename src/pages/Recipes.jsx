@@ -7,14 +7,12 @@ import CheckBoxList from "../components/CheckBoxList.jsx";
 import MiniPlate from "../components/MiniPlate.jsx";
 
 const StyledOptionsTitle = Styled.h1`
-font-family: 'TT Hoves';
-font-style: normal;
-font-weight: 600;
-font-size: 22px;
-line-height: 33px;
-/* identical to box height */
-
-color: #252525;
+    font-family: 'TT Hoves';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+    color: #252525;
 `;
 
 const StyledFilterContent = Styled.div`
@@ -37,7 +35,7 @@ const StyledDualContent = Styled.div`
             text-align: center;
         }
     }
-    `;
+`;
 const StyledRecipeContents = Styled.div`
     width: 100%;
     min-height: 320px;
@@ -49,60 +47,54 @@ const StyledRecipeContents = Styled.div`
 `;
 
 const Recipes = () => {
-    var images_list = [
-    ];
+  var images_list = [];
 
-    var top_subtitles = [
-    ];
+  var top_subtitles = [];
 
-    var images_titles = [
-    ];
+  var images_titles = [];
 
-    var bottom_subtittles = [
-    ];
+  var bottom_subtittles = [];
 
+  return (
+    <>
+      <Carousel
+        top_subtitles={top_subtitles}
+        images_titles={images_titles}
+        images_list={images_list}
+        bottom_subtittles={bottom_subtittles}
+      ></Carousel>
+      <StyledDualContent>
+        <StyledFilterContent>
+          <StyledOptionsTitle>Filters</StyledOptionsTitle>
 
-    return <>
-        <Carousel top_subtitles={top_subtitles} images_titles={images_titles} images_list={images_list} bottom_subtittles={bottom_subtittles}></Carousel>
-        <StyledDualContent>
-            <StyledFilterContent>
-                <StyledOptionsTitle>Filters</StyledOptionsTitle>
-
-
-                <CheckBoxList id={"r_c"} title="Alergias" optionsList={
-                    [
-                        "Pastas", "Ensaladas"
-                    ]
-                }/>
-                <CheckBoxList id={"r_i"} title="Cocaina" optionsList={
-                    [
-                        "Tomates", "Cebolla"
-                    ]
-                }/>
-                <CheckBoxList id={"r_china"} title="china" optionsList={
-                    [
-                        "Caballos","Gatos", "Perros"
-                    ]
-                }/>
-
-
-            </StyledFilterContent>
-            <StyledRecipeContents>
-
-                <MiniPlate id="2" ></MiniPlate>
-                <MiniPlate id="2" ></MiniPlate>
-                <MiniPlate id="2" ></MiniPlate>
-                <MiniPlate id="2" ></MiniPlate>
-                <MiniPlate id="2" ></MiniPlate>
-                <MiniPlate id="2" ></MiniPlate>
-                <MiniPlate id="2" ></MiniPlate>
-
-
-            </StyledRecipeContents>
-        </StyledDualContent>
-    
+          <CheckBoxList
+            id={"r_c"}
+            title="Alergias"
+            optionsList={["Pastas", "Ensaladas"]}
+          />
+          <CheckBoxList
+            id={"r_i"}
+            title="Cocaina"
+            optionsList={["Tomates", "Cebolla"]}
+          />
+          <CheckBoxList
+            id={"r_china"}
+            title="china"
+            optionsList={["Caballos", "Gatos", "Perros"]}
+          />
+        </StyledFilterContent>
+        <StyledRecipeContents>
+          <MiniPlate id="2"></MiniPlate>
+          <MiniPlate id="2"></MiniPlate>
+          <MiniPlate id="2"></MiniPlate>
+          <MiniPlate id="2"></MiniPlate>
+          <MiniPlate id="2"></MiniPlate>
+          <MiniPlate id="2"></MiniPlate>
+          <MiniPlate id="2"></MiniPlate>
+        </StyledRecipeContents>
+      </StyledDualContent>
     </>
-
-}
+  );
+};
 
 export default Recipes;

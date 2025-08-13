@@ -7,7 +7,8 @@ import Recipes from "../pages/Recipes.jsx";
 import RecoverPassword from "../pages/RecoverPassword.jsx";
 import ForgotPassword from "../pages/ForgotPassword.jsx";
 import Recipe from "../pages/Recipe.jsx";
-
+import AdminPanel from "../pages/AdminPanel.jsx";
+import Categories from "../pages/Categories.jsx";
 
 const AppRouter = () => {
   return (
@@ -19,6 +20,11 @@ const AppRouter = () => {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/recover-password" element={<RecoverPassword />} />
       <Route path="/recipe/:id" element={<Recipe />} />
+      <Route path="admin" element={<AdminPanel />}>
+        <Route path="categories" element={<Categories />} />
+        <Route path="people" element={<div>people</div>} />
+        <Route index element={<div>recipes</div>} />
+      </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
