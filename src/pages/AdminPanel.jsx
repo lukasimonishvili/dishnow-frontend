@@ -3,6 +3,7 @@ import Styled from "styled-components";
 import peopleIcon from "../assets/img/people.svg";
 import recipesIcon from "../assets/img/recipes.svg";
 import categoriesIcon from "../assets/img/categories.svg";
+import ingredientsIcon from "../assets/img/ingredients.svg";
 
 const StyledAdminPanel = Styled.div`
     width: 100%;
@@ -70,6 +71,10 @@ const AdminPanel = () => {
         <Link to="/admin/categories">
           <img src={categoriesIcon} alt="" />
           <span>Categories</span>
+        </Link>
+        <Link to="/admin/ingredients">
+          <img src={ingredientsIcon} alt="" />
+          <span>Ingredients</span>
         </Link>
       </StyledSidebar>
       <div>
