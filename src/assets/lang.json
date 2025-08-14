@@ -51,7 +51,14 @@
     "changePassword": "Change password",
     "send": "send",
     "ingredients": "ingredients",
-    "description": "description"
+    "description": "description",
+    "addIngredients": "Add ingredients",
+    "ingredientsRequired": "Please select at least one ingredient",
+    "ingredientsPlaceholder": "Select ingredients...",
+    "category": "Category",
+    "categoryRequired": "category is required",
+    "chooseImages": "Choose images",
+    "imageError": "Please select at least one image"
   },
   "ES": {
     "home": "Inicio",
@@ -105,7 +112,14 @@
     "changePassword": "Cambiar contraseña",
     "send": "Enviar",
     "ingredients": "ingredientes",
-    "description": "Descripción"
+    "description": "Descripción",
+    "addIngredients": "Agregar ingredientes",
+    "ingredientsRequired": "Por favor seleccione al menos un ingrediente",
+    "ingredientsPlaceholder": "Seleccione ingredientes...",
+    "category": "Categoría",
+    "categoryRequired": "La categoría es obligatoria",
+    "chooseImages": "Elegir imágenes",
+    "imageError": "Por favor seleccione al menos una imagen"
   },
   "CA": {
     "home": "Inici",
@@ -159,6 +173,13 @@
     "changePassword": "Canviar contrasenya",
     "send": "Enviar",
     "ingredients": "ingredients",
-    "description": "Descripció"
+    "description": "Descripció",
+    "addIngredients": "Afegir ingredients",
+    "ingredientsRequired": "Si us plau seleccioneu almenys un ingredient",
+    "ingredientsPlaceholder": "Seleccioneu ingredients...",
+    "category": "Categoria",
+    "categoryRequired": "La categoria és obligatòria",
+    "chooseImages": "Triar imatges",
+    "imageError": "Si us plau seleccioneu almenys una imatge"
   }
 }

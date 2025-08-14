@@ -13,6 +13,7 @@ import People from "../pages/People.jsx";
 import AdminRecipes from "../pages/AdminRecipes.jsx";
 import AdminRecipe from "../pages/AdminRecipe.jsx";
 import Ingredients from "../pages/Ingredients.jsx";
+import AddRecipe from "../pages/AddRecipe.jsx";
 
 const AppRouter = () => {
   return (
@@ -24,6 +25,7 @@ const AppRouter = () => {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/recover-password" element={<RecoverPassword />} />
       <Route path="/recipe/:id" element={<Recipe />} />
+      <Route path="/add-recipe" element={<AddRecipe />} />
       <Route path="admin" element={<AdminPanel />}>
         <Route path="categories" element={<Categories />} />
         <Route path="people" element={<People />} />
