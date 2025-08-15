@@ -69,6 +69,7 @@ const IngredientSelect = ({
   rules,
   error,
   placeholder,
+  onChange,
 }) => {
   return (
     <div style={{ width: "100%" }}>
@@ -84,7 +85,10 @@ const IngredientSelect = ({
             placeholder={placeholder}
             styles={customStyles}
             error={error}
-            onChange={(selected) => field.onChange(selected)}
+            onChange={(selected) => {
+              if (onChange) onChange(selected);
+              return field.onChange(selected);
+            }}
             value={field.value}
           />
         )}

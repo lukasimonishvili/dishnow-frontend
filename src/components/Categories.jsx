@@ -4,7 +4,7 @@ import { useLanguage } from "../contexts/languageContext.jsx";
 import langData from "../assets/lang.json";
 
 const StyledCategories = Styled.div`
-    width: 284px;
+    width: 100%;
 
     & > h2 {
         font-family: 'Poppins';

@@ -3,6 +3,7 @@ import bannerImage from "../assets/img/test_food_carousel.jpg";
 import Categories from "../components/Categories";
 import RecipeList from "../components/RecipeList";
 import { useState } from "react";
+import IngredientFilter from "../components/IngredientFilter";
 
 const StyledContainer = Styled.div`
   width: 1264px;
@@ -49,8 +50,14 @@ const StyledContent = Styled.div`
   margin-top: 50px;
 `;
 
+const StyledSidebar = Styled.aside`
+  width: 284px;
+`;
+
 const Recipes = () => {
   const [activeCategory, setActiveCategory] = useState(null);
+  const [selectedIngredients, setSelectedIngredients] = useState([]);
+
   return (
     <StyledContainer>
       <StyledBanner image={bannerImage}>
@@ -58,8 +65,14 @@ const Recipes = () => {
         <p>Explore, cook, and enjoy</p>
       </StyledBanner>
       <StyledContent>
-        <Categories setActiveCategory={setActiveCategory} />
-        <RecipeList category={activeCategory} />
+        <StyledSidebar>
+          <IngredientFilter setSelectedIngredients={setSelectedIngredients} />
+          <Categories setActiveCategory={setActiveCategory} />
+        </StyledSidebar>
+        <RecipeList
+          category={activeCategory}
+          ingredients={selectedIngredients}
+        />
       </StyledContent>
     </StyledContainer>
   );

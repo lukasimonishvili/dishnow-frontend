@@ -28,23 +28,21 @@ const StyledList = Styled.div`
   margin-bottom: 100px;
 `;
 
-const StyledListItem = Styled(Link)`
+const StyledListItem = Styled.div`
   display: block;
   width: 305px;
-  height: 315px;
   box-shadow: 0px 0px 1px rgba(12, 26, 75, 0.24), 0px 3px 8px -1px rgba(50, 50, 71, 0.05);
   border-radius: 16px;
   margin-top: 33px;
   margin-left: 14px;
   overflow: hidden;
   padding: 8px;
-  position: relative;
 
   &:nth-child(3n + 1) {
     margin-left: 0;
   }
 
-  & > div {
+  & > div.cover {
     width: 100%;
     height: 200px;
     border-radius: 16px;
@@ -52,6 +50,14 @@ const StyledListItem = Styled(Link)`
     background-size: cover;
     background-position: center;
     margin-bottom: 4px;
+  }
+
+  & > div.footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
   }
 
   & > h5 {
@@ -72,14 +78,12 @@ const StyledListItem = Styled(Link)`
     color: #252525;
   }
 
-  & > img {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
+  &  img {
+    cursor: pointer;
   }
 `;
 
-const RecipeList = ({ category }) => {
+const RecipeList = ({ category, ingredients }) => {
   const { language } = useLanguage();
   const [recipes, setRecipes] = useState([]);
 
@@ -88,9 +92,12 @@ const RecipeList = ({ category }) => {
     if (!!category) {
       result = result.filter((recipe) => recipe.category.id === category.id);
     }
-    console.log(result);
+
+    if (ingredients.length) {
+      console.log(ingredients);
+    }
     setRecipes(result);
-  }, [category]);
+  }, [category, ingredients.length]);
 
   return (
     <StyledListWrapper>
@@ -99,15 +106,14 @@ const RecipeList = ({ category }) => {
       </h3>
       <StyledList>
         {recipes.map((recipe) => (
-          <StyledListItem
-            to={"/recipe/" + recipe.id}
-            key={recipe.id}
-            image={recipe.photos[0]}
-          >
-            <div />
+          <StyledListItem key={recipe.id} image={recipe.photos[0]}>
+            <div className="cover" />
             <h5>{recipe.category["name" + language]}</h5>
             <h3>{recipe["name" + language]}</h3>
-            <img src={heartIcon} />
+            <div className="footer">
+              <Link to={"/recipe/" + recipe.id}>See more</Link>
+              <img src={heartIcon} />
+            </div>
           </StyledListItem>
         ))}
       </StyledList>

@@ -237,11 +237,11 @@ const AddRecipe = () => {
             control={control}
             name="ingredients"
             options={ingredients}
+            placeholder={langData[language].ingredientsPlaceholder}
             rules={{
               required: langData[language].ingredientsRequired,
             }}
             error={errors.ingredients}
-            placeholder={langData[language].ingredientsPlaceholder}
           />
         </StyledInputWrapper>
         <StyledInputWrapper>
