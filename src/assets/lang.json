@@ -61,7 +61,9 @@
     "imageError": "Please select at least one image",
     "all": "All",
     "search": "Search",
-    "seeMore": "See more"
+    "seeMore": "See more",
+    "bannerTitle": "Your next favorite meal awaits",
+    "bannerText": "Explore, cook, and enjoy"
   },
   "ES": {
     "home": "Inicio",
@@ -125,7 +127,9 @@
     "imageError": "Por favor seleccione al menos una imagen",
     "all": "todas",
     "search": "Busqueda",
-    "seeMore": "Ver más"
+    "seeMore": "Ver más",
+    "bannerTitle": "Tu próxima comida favorita te espera",
+    "bannerText": "Explora, cocina y disfruta"
   },
   "CA": {
     "home": "Inici",
@@ -189,6 +193,8 @@
     "imageError": "Si us plau seleccioneu almenys una imatge",
     "all": "totes",
     "search": "cerca",
-    "seeMore": "Veure més"
+    "seeMore": "Veure més",
+    "bannerTitle": "El teu proper àpat preferit t'espera",
+    "bannerText": "Explora, cuina i gaudeix"
   }
 }

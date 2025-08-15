@@ -26,6 +26,14 @@ const StyledList = Styled.div`
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 100px;
+
+  @media screen and (max-width: 1322px) {
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 870px) {
+    flex-direction: column;
+  }
 `;
 
 const StyledListItem = Styled.div`
@@ -37,6 +45,22 @@ const StyledListItem = Styled.div`
   margin-left: 14px;
   overflow: hidden;
   padding: 8px;
+
+  @media screen and (max-width: 1322px) {
+    margin-left: 14px !important;
+
+    &:nth-child(2n + 1) {
+      margin-left: 0 !important;;
+    }
+  }
+
+  @media screen and (max-width: 870px) {
+    margin-left: 0 !important;
+  }
+
+  @media screen and (max-width: 365px) {
+    width: 100%;
+  }
 
   &:nth-child(3n + 1) {
     margin-left: 0;

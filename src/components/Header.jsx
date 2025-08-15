@@ -128,7 +128,7 @@ const StyledLanguagePicker = Styled.button`
               text-decoration: underline;
             }
             &:focus {
-              outline: 2px solid #000; /* o el color que quieras */
+              outline: 2px solid #000; 
               border-radius: 2px;
               outline-offset: 0px;
             }
@@ -136,7 +136,7 @@ const StyledLanguagePicker = Styled.button`
       }
 
       &:focus {
-        outline: 2px solid #000; /* o el color que quieras */
+        outline: 2px solid #000; 
         outline-offset: 2px;
         border-radius: 2px;
       }
