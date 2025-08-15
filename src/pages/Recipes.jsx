@@ -1,99 +1,67 @@
 import Styled from "styled-components";
+import bannerImage from "../assets/img/test_food_carousel.jpg";
+import Categories from "../components/Categories";
+import RecipeList from "../components/RecipeList";
 import { useState } from "react";
-import { useLanguage } from "../contexts/languageContext.jsx";
-import langData from "../assets/lang.json";
-import Carousel from "../components/Carousel.jsx";
-import CheckBoxList from "../components/CheckBoxList.jsx";
-import MiniPlate from "../components/MiniPlate.jsx";
 
-const StyledOptionsTitle = Styled.h1`
-    font-family: 'TT Hoves';
+const StyledContainer = Styled.div`
+  width: 1264px;
+  margin: 0 auto;
+  padding-top: 50px;
+`;
+
+const StyledBanner = Styled.div`
+  width: 100%;
+  height: 355px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #252525 -16.65%, rgba(0, 0, 0, 0) 100%), url(${(
+    props
+  ) => props.image});
+  background-position: center;
+  background-size: cover;
+  padding: 80px;
+
+  & > h2 {
+    font-family: 'Poppins';
     font-style: normal;
-    font-weight: 600;
-    font-size: 22px;
-    line-height: 33px;
-    color: #252525;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 127%;
+    color: #FFFFFF;
+  }
+
+  & > p {
+    padding-top: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 127%;
+    color: #FFFFFF;
+  }
 `;
 
-const StyledFilterContent = Styled.div`
-    width: fit-content;
-    min-width: 250px;
-    height: fit-content;
-    padding-right: 2em;
-    display:flex;
-    flex-direction:column;
-    gap: 2em;
-`;
-const StyledDualContent = Styled.div`
-    margin: 1em;
-    display:flex;
-    justify-content: space-between;
-    @media only screen and (max-width: 600px){
-        flex-direction:column;
-        align-items: center;
-        & h3, h1{
-            text-align: center;
-        }
-    }
-`;
-const StyledRecipeContents = Styled.div`
-    width: 100%;
-    min-height: 320px;
-    
-    display:flex;
-    flex-wrap:wrap;
-    gap: 1em;
-    
+const StyledContent = Styled.div`
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 50px;
 `;
 
 const Recipes = () => {
-  var images_list = [];
-
-  var top_subtitles = [];
-
-  var images_titles = [];
-
-  var bottom_subtittles = [];
-
+  const [activeCategory, setActiveCategory] = useState(null);
   return (
-    <>
-      <Carousel
-        top_subtitles={top_subtitles}
-        images_titles={images_titles}
-        images_list={images_list}
-        bottom_subtittles={bottom_subtittles}
-      ></Carousel>
-      <StyledDualContent>
-        <StyledFilterContent>
-          <StyledOptionsTitle>Filters</StyledOptionsTitle>
-
-          <CheckBoxList
-            id={"r_c"}
-            title="Alergias"
-            optionsList={["Pastas", "Ensaladas"]}
-          />
-          <CheckBoxList
-            id={"r_i"}
-            title="Cocaina"
-            optionsList={["Tomates", "Cebolla"]}
-          />
-          <CheckBoxList
-            id={"r_china"}
-            title="china"
-            optionsList={["Caballos", "Gatos", "Perros"]}
-          />
-        </StyledFilterContent>
-        <StyledRecipeContents>
-          <MiniPlate id="2"></MiniPlate>
-          <MiniPlate id="2"></MiniPlate>
-          <MiniPlate id="2"></MiniPlate>
-          <MiniPlate id="2"></MiniPlate>
-          <MiniPlate id="2"></MiniPlate>
-          <MiniPlate id="2"></MiniPlate>
-          <MiniPlate id="2"></MiniPlate>
-        </StyledRecipeContents>
-      </StyledDualContent>
-    </>
+    <StyledContainer>
+      <StyledBanner image={bannerImage}>
+        <h2>Your next favorite meal awaits</h2>
+        <p>Explore, cook, and enjoy</p>
+      </StyledBanner>
+      <StyledContent>
+        <Categories setActiveCategory={setActiveCategory} />
+        <RecipeList category={activeCategory} />
+      </StyledContent>
+    </StyledContainer>
   );
 };
 

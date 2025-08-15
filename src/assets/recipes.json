@@ -1,0 +1,887 @@
+[
+  {
+    "id": 6,
+    "nameEN": "Chicken Parmesan",
+    "nameES": "Chicken Parmesan",
+    "nameCA": "Chicken Parmesan",
+    "category": {
+      "id": 1,
+      "nameEN": "Italian",
+      "nameES": "Italiano",
+      "nameCA": "Italià"
+    },
+    "ingredients": [
+      {
+        "id": 1,
+        "nameEN": "Chicken breast",
+        "nameES": "Chicken breast",
+        "nameCA": "Chicken breast"
+      },
+      {
+        "id": 2,
+        "nameEN": "Breadcrumbs",
+        "nameES": "Breadcrumbs",
+        "nameCA": "Breadcrumbs"
+      },
+      {
+        "id": 3,
+        "nameEN": "Tomato sauce",
+        "nameES": "Tomato sauce",
+        "nameCA": "Tomato sauce"
+      },
+      {
+        "id": 4,
+        "nameEN": "Mozzarella cheese",
+        "nameES": "Mozzarella cheese",
+        "nameCA": "Mozzarella cheese"
+      },
+      {
+        "id": 5,
+        "nameEN": "Olive oil",
+        "nameES": "Olive oil",
+        "nameCA": "Olive oil"
+      }
+    ],
+    "descriptionEN": "Breaded chicken topped with tomato sauce and melted cheese.",
+    "descriptionES": "Breaded chicken topped with tomato sauce and melted cheese.",
+    "descriptionCA": "Breaded chicken topped with tomato sauce and melted cheese.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 7,
+    "nameEN": "Tacos al Pastor",
+    "nameES": "Tacos al Pastor",
+    "nameCA": "Tacos al Pastor",
+    "category": {
+      "id": 2,
+      "nameEN": "Mexican",
+      "nameES": "Mexicana",
+      "nameCA": "Mexicana"
+    },
+    "ingredients": [
+      { "id": 1, "nameEN": "Pork", "nameES": "Pork", "nameCA": "Pork" },
+      {
+        "id": 2,
+        "nameEN": "Pineapple",
+        "nameES": "Pineapple",
+        "nameCA": "Pineapple"
+      },
+      {
+        "id": 3,
+        "nameEN": "Corn tortillas",
+        "nameES": "Corn tortillas",
+        "nameCA": "Corn tortillas"
+      },
+      { "id": 4, "nameEN": "Onion", "nameES": "Onion", "nameCA": "Onion" },
+      {
+        "id": 5,
+        "nameEN": "Cilantro",
+        "nameES": "Cilantro",
+        "nameCA": "Cilantro"
+      }
+    ],
+    "descriptionEN": "Marinated pork served in tortillas with pineapple and onions.",
+    "descriptionES": "Marinated pork served in tortillas with pineapple and onions.",
+    "descriptionCA": "Marinated pork served in tortillas with pineapple and onions.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 8,
+    "nameEN": "Sushi Roll",
+    "nameES": "Sushi Roll",
+    "nameCA": "Sushi Roll",
+    "category": {
+      "id": 3,
+      "nameEN": "Japanese",
+      "nameES": "Japonesa",
+      "nameCA": "Japonesa"
+    },
+    "ingredients": [
+      {
+        "id": 1,
+        "nameEN": "Sushi rice",
+        "nameES": "Sushi rice",
+        "nameCA": "Sushi rice"
+      },
+      {
+        "id": 2,
+        "nameEN": "Nori seaweed",
+        "nameES": "Nori seaweed",
+        "nameCA": "Nori seaweed"
+      },
+      {
+        "id": 3,
+        "nameEN": "Raw fish",
+        "nameES": "Raw fish",
+        "nameCA": "Raw fish"
+      },
+      {
+        "id": 4,
+        "nameEN": "Avocado",
+        "nameES": "Avocado",
+        "nameCA": "Avocado"
+      },
+      {
+        "id": 5,
+        "nameEN": "Soy sauce",
+        "nameES": "Soy sauce",
+        "nameCA": "Soy sauce"
+      }
+    ],
+    "descriptionEN": "Rice and fillings rolled in seaweed, served with soy sauce.",
+    "descriptionES": "Rice and fillings rolled in seaweed, served with soy sauce.",
+    "descriptionCA": "Rice and fillings rolled in seaweed, served with soy sauce.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 9,
+    "nameEN": "Chicken Tikka Masala",
+    "nameES": "Chicken Tikka Masala",
+    "nameCA": "Chicken Tikka Masala",
+    "category": {
+      "id": 4,
+      "nameEN": "Indian",
+      "nameES": "India",
+      "nameCA": "Índia"
+    },
+    "ingredients": [
+      {
+        "id": 1,
+        "nameEN": "Chicken",
+        "nameES": "Chicken",
+        "nameCA": "Chicken"
+      },
+      {
+        "id": 2,
+        "nameEN": "Tomato sauce",
+        "nameES": "Tomato sauce",
+        "nameCA": "Tomato sauce"
+      },
+      { "id": 3, "nameEN": "Yogurt", "nameES": "Yogurt", "nameCA": "Yogurt" },
+      { "id": 4, "nameEN": "Garlic", "nameES": "Garlic", "nameCA": "Garlic" },
+      {
+        "id": 5,
+        "nameEN": "Garam masala",
+        "nameES": "Garam masala",
+        "nameCA": "Garam masala"
+      }
+    ],
+    "descriptionEN": "Chicken in spiced tomato sauce with creamy texture.",
+    "descriptionES": "Chicken in spiced tomato sauce with creamy texture.",
+    "descriptionCA": "Chicken in spiced tomato sauce with creamy texture.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 10,
+    "nameEN": "Croissant",
+    "nameES": "Croissant",
+    "nameCA": "Croissant",
+    "category": {
+      "id": 5,
+      "nameEN": "French",
+      "nameES": "Francesa",
+      "nameCA": "Francesa"
+    },
+    "ingredients": [
+      { "id": 1, "nameEN": "Flour", "nameES": "Flour", "nameCA": "Flour" },
+      { "id": 2, "nameEN": "Butter", "nameES": "Butter", "nameCA": "Butter" },
+      { "id": 3, "nameEN": "Sugar", "nameES": "Sugar", "nameCA": "Sugar" },
+      { "id": 4, "nameEN": "Yeast", "nameES": "Yeast", "nameCA": "Yeast" },
+      { "id": 5, "nameEN": "Salt", "nameES": "Salt", "nameCA": "Salt" }
+    ],
+    "descriptionEN": "Flaky buttery pastry perfect for breakfast.",
+    "descriptionES": "Flaky buttery pastry perfect for breakfast.",
+    "descriptionCA": "Flaky buttery pastry perfect for breakfast.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 11,
+    "nameEN": "Paella Valenciana",
+    "nameES": "Paella Valenciana",
+    "nameCA": "Paella Valenciana",
+    "category": {
+      "id": 6,
+      "nameEN": "Spanish",
+      "nameES": "Española",
+      "nameCA": "Espanyola"
+    },
+    "ingredients": [
+      { "id": 1, "nameEN": "Rice", "nameES": "Rice", "nameCA": "Rice" },
+      {
+        "id": 2,
+        "nameEN": "Chicken",
+        "nameES": "Chicken",
+        "nameCA": "Chicken"
+      },
+      { "id": 3, "nameEN": "Rabbit", "nameES": "Rabbit", "nameCA": "Rabbit" },
+      {
+        "id": 4,
+        "nameEN": "Green beans",
+        "nameES": "Green beans",
+        "nameCA": "Green beans"
+      },
+      {
+        "id": 5,
+        "nameEN": "Olive oil",
+        "nameES": "Olive oil",
+        "nameCA": "Olive oil"
+      }
+    ],
+    "descriptionEN": "Traditional Valencian rice dish with meat and vegetables.",
+    "descriptionES": "Traditional Valencian rice dish with meat and vegetables.",
+    "descriptionCA": "Traditional Valencian rice dish with meat and vegetables.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 12,
+    "nameEN": "Greek Salad",
+    "nameES": "Ensalada Griega",
+    "nameCA": "Amanida Grega",
+    "category": {
+      "id": 7,
+      "nameEN": "Greek",
+      "nameES": "Griega",
+      "nameCA": "Grega"
+    },
+    "ingredients": [
+      {
+        "id": 1,
+        "nameEN": "Tomatoes",
+        "nameES": "Tomatoes",
+        "nameCA": "Tomatoes"
+      },
+      {
+        "id": 2,
+        "nameEN": "Cucumber",
+        "nameES": "Cucumber",
+        "nameCA": "Cucumber"
+      },
+      {
+        "id": 3,
+        "nameEN": "Feta cheese",
+        "nameES": "Feta cheese",
+        "nameCA": "Feta cheese"
+      },
+      { "id": 4, "nameEN": "Olives", "nameES": "Olives", "nameCA": "Olives" },
+      {
+        "id": 5,
+        "nameEN": "Olive oil",
+        "nameES": "Olive oil",
+        "nameCA": "Olive oil"
+      }
+    ],
+    "descriptionEN": "Fresh salad with feta, olives, and olive oil.",
+    "descriptionES": "Fresh salad with feta, olives, and olive oil.",
+    "descriptionCA": "Fresh salad with feta, olives, and olive oil.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 13,
+    "nameEN": "Falafel",
+    "nameES": "Falafel",
+    "nameCA": "Falafel",
+    "category": {
+      "id": 8,
+      "nameEN": "Middle Eastern",
+      "nameES": "Oriente Medio",
+      "nameCA": "Orient Mitjà"
+    },
+    "ingredients": [
+      {
+        "id": 1,
+        "nameEN": "Chickpeas",
+        "nameES": "Chickpeas",
+        "nameCA": "Chickpeas"
+      },
+      { "id": 2, "nameEN": "Garlic", "nameES": "Garlic", "nameCA": "Garlic" },
+      { "id": 3, "nameEN": "Onion", "nameES": "Onion", "nameCA": "Onion" },
+      {
+        "id": 4,
+        "nameEN": "Parsley",
+        "nameES": "Parsley",
+        "nameCA": "Parsley"
+      },
+      { "id": 5, "nameEN": "Cumin", "nameES": "Cumin", "nameCA": "Cumin" }
+    ],
+    "descriptionEN": "Deep-fried balls made from ground chickpeas and spices.",
+    "descriptionES": "Deep-fried balls made from ground chickpeas and spices.",
+    "descriptionCA": "Deep-fried balls made from ground chickpeas and spices.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 14,
+    "nameEN": "Peking Duck",
+    "nameES": "Pato Pekín",
+    "nameCA": "Ànec de Pequín",
+    "category": {
+      "id": 9,
+      "nameEN": "Chinese",
+      "nameES": "China",
+      "nameCA": "Xinesa"
+    },
+    "ingredients": [
+      { "id": 1, "nameEN": "Duck", "nameES": "Duck", "nameCA": "Duck" },
+      {
+        "id": 2,
+        "nameEN": "Hoisin sauce",
+        "nameES": "Hoisin sauce",
+        "nameCA": "Hoisin sauce"
+      },
+      {
+        "id": 3,
+        "nameEN": "Scallions",
+        "nameES": "Scallions",
+        "nameCA": "Scallions"
+      },
+      {
+        "id": 4,
+        "nameEN": "Cucumber",
+        "nameES": "Cucumber",
+        "nameCA": "Cucumber"
+      },
+      {
+        "id": 5,
+        "nameEN": "Pancakes",
+        "nameES": "Pancakes",
+        "nameCA": "Pancakes"
+      }
+    ],
+    "descriptionEN": "Crispy-skinned duck served with pancakes and hoisin sauce.",
+    "descriptionES": "Crispy-skinned duck served with pancakes and hoisin sauce.",
+    "descriptionCA": "Crispy-skinned duck served with pancakes and hoisin sauce.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 15,
+    "nameEN": "Cheeseburger",
+    "nameES": "Hamburguesa con queso",
+    "nameCA": "Hamburguesa amb formatge",
+    "category": {
+      "id": 10,
+      "nameEN": "American",
+      "nameES": "Americana",
+      "nameCA": "Americana"
+    },
+    "ingredients": [
+      {
+        "id": 1,
+        "nameEN": "Beef patty",
+        "nameES": "Beef patty",
+        "nameCA": "Beef patty"
+      },
+      {
+        "id": 2,
+        "nameEN": "Cheddar cheese",
+        "nameES": "Cheddar cheese",
+        "nameCA": "Cheddar cheese"
+      },
+      {
+        "id": 3,
+        "nameEN": "Lettuce",
+        "nameES": "Lettuce",
+        "nameCA": "Lettuce"
+      },
+      { "id": 4, "nameEN": "Tomato", "nameES": "Tomato", "nameCA": "Tomato" },
+      { "id": 5, "nameEN": "Bun", "nameES": "Bun", "nameCA": "Bun" }
+    ],
+    "descriptionEN": "Juicy beef burger topped with cheese, lettuce, and tomato.",
+    "descriptionES": "Juicy beef burger topped with cheese, lettuce, and tomato.",
+    "descriptionCA": "Juicy beef burger topped with cheese, lettuce, and tomato.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 16,
+    "nameEN": "Margherita Pizza",
+    "nameES": "Pizza Margarita",
+    "nameCA": "Pizza Margarita",
+    "category": {
+      "id": 1,
+      "nameEN": "Italian",
+      "nameES": "Italiano",
+      "nameCA": "Italià"
+    },
+    "ingredients": [
+      {
+        "id": 1,
+        "nameEN": "Pizza dough",
+        "nameES": "Pizza dough",
+        "nameCA": "Pizza dough"
+      },
+      {
+        "id": 2,
+        "nameEN": "Tomato sauce",
+        "nameES": "Tomato sauce",
+        "nameCA": "Tomato sauce"
+      },
+      {
+        "id": 3,
+        "nameEN": "Mozzarella",
+        "nameES": "Mozzarella",
+        "nameCA": "Mozzarella"
+      },
+      { "id": 4, "nameEN": "Basil", "nameES": "Basil", "nameCA": "Basil" },
+      {
+        "id": 5,
+        "nameEN": "Olive oil",
+        "nameES": "Olive oil",
+        "nameCA": "Olive oil"
+      }
+    ],
+    "descriptionEN": "Classic Neapolitan pizza with tomato, mozzarella, and basil.",
+    "descriptionES": "Classic Neapolitan pizza with tomato, mozzarella, and basil.",
+    "descriptionCA": "Classic Neapolitan pizza with tomato, mozzarella, and basil.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 17,
+    "nameEN": "Tacos al Pastor",
+    "nameES": "Tacos al Pastor",
+    "nameCA": "Tacos al Pastor",
+    "category": {
+      "id": 2,
+      "nameEN": "Mexican",
+      "nameES": "Mexicana",
+      "nameCA": "Mexicana"
+    },
+    "ingredients": [
+      { "id": 1, "nameEN": "Pork", "nameES": "Pork", "nameCA": "Pork" },
+      {
+        "id": 2,
+        "nameEN": "Pineapple",
+        "nameES": "Pineapple",
+        "nameCA": "Pineapple"
+      },
+      { "id": 3, "nameEN": "Onion", "nameES": "Onion", "nameCA": "Onion" },
+      {
+        "id": 4,
+        "nameEN": "Coriander",
+        "nameES": "Coriander",
+        "nameCA": "Coriander"
+      },
+      {
+        "id": 5,
+        "nameEN": "Corn tortillas",
+        "nameES": "Corn tortillas",
+        "nameCA": "Corn tortillas"
+      }
+    ],
+    "descriptionEN": "Flavorful pork tacos marinated with spices and pineapple.",
+    "descriptionES": "Flavorful pork tacos marinated with spices and pineapple.",
+    "descriptionCA": "Flavorful pork tacos marinated with spices and pineapple.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 18,
+    "nameEN": "Sushi Roll",
+    "nameES": "Rollo de Sushi",
+    "nameCA": "Rotllo de Sushi",
+    "category": {
+      "id": 3,
+      "nameEN": "Japanese",
+      "nameES": "Japonesa",
+      "nameCA": "Japonesa"
+    },
+    "ingredients": [
+      {
+        "id": 1,
+        "nameEN": "Sushi rice",
+        "nameES": "Sushi rice",
+        "nameCA": "Sushi rice"
+      },
+      {
+        "id": 2,
+        "nameEN": "Nori seaweed",
+        "nameES": "Nori seaweed",
+        "nameCA": "Nori seaweed"
+      },
+      { "id": 3, "nameEN": "Salmon", "nameES": "Salmon", "nameCA": "Salmon" },
+      {
+        "id": 4,
+        "nameEN": "Avocado",
+        "nameES": "Avocado",
+        "nameCA": "Avocado"
+      },
+      {
+        "id": 5,
+        "nameEN": "Soy sauce",
+        "nameES": "Soy sauce",
+        "nameCA": "Soy sauce"
+      }
+    ],
+    "descriptionEN": "Traditional sushi roll with fresh salmon and avocado.",
+    "descriptionES": "Traditional sushi roll with fresh salmon and avocado.",
+    "descriptionCA": "Traditional sushi roll with fresh salmon and avocado.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 19,
+    "nameEN": "Butter Chicken",
+    "nameES": "Pollo a la Mantequilla",
+    "nameCA": "Pollastre a la Mantega",
+    "category": {
+      "id": 4,
+      "nameEN": "Indian",
+      "nameES": "India",
+      "nameCA": "Índia"
+    },
+    "ingredients": [
+      {
+        "id": 1,
+        "nameEN": "Chicken",
+        "nameES": "Chicken",
+        "nameCA": "Chicken"
+      },
+      {
+        "id": 2,
+        "nameEN": "Tomato puree",
+        "nameES": "Tomato puree",
+        "nameCA": "Tomato puree"
+      },
+      { "id": 3, "nameEN": "Butter", "nameES": "Butter", "nameCA": "Butter" },
+      { "id": 4, "nameEN": "Cream", "nameES": "Cream", "nameCA": "Cream" },
+      {
+        "id": 5,
+        "nameEN": "Garam masala",
+        "nameES": "Garam masala",
+        "nameCA": "Garam masala"
+      }
+    ],
+    "descriptionEN": "Rich and creamy chicken curry with butter and spices.",
+    "descriptionES": "Rich and creamy chicken curry with butter and spices.",
+    "descriptionCA": "Rich and creamy chicken curry with butter and spices.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 20,
+    "nameEN": "Croissant",
+    "nameES": "Croissant",
+    "nameCA": "Croissant",
+    "category": {
+      "id": 5,
+      "nameEN": "French",
+      "nameES": "Francesa",
+      "nameCA": "Francesa"
+    },
+    "ingredients": [
+      { "id": 1, "nameEN": "Flour", "nameES": "Flour", "nameCA": "Flour" },
+      { "id": 2, "nameEN": "Butter", "nameES": "Butter", "nameCA": "Butter" },
+      { "id": 3, "nameEN": "Milk", "nameES": "Milk", "nameCA": "Milk" },
+      { "id": 4, "nameEN": "Yeast", "nameES": "Yeast", "nameCA": "Yeast" },
+      { "id": 5, "nameEN": "Sugar", "nameES": "Sugar", "nameCA": "Sugar" }
+    ],
+    "descriptionEN": "Flaky, buttery French pastry perfect for breakfast.",
+    "descriptionES": "Flaky, buttery French pastry perfect for breakfast.",
+    "descriptionCA": "Flaky, buttery French pastry perfect for breakfast.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 21,
+    "nameEN": "Paella",
+    "nameES": "Paella",
+    "nameCA": "Paella",
+    "category": {
+      "id": 6,
+      "nameEN": "Spanish",
+      "nameES": "Española",
+      "nameCA": "Espanyola"
+    },
+    "ingredients": [
+      { "id": 1, "nameEN": "Rice", "nameES": "Rice", "nameCA": "Rice" },
+      {
+        "id": 2,
+        "nameEN": "Saffron",
+        "nameES": "Saffron",
+        "nameCA": "Saffron"
+      },
+      {
+        "id": 3,
+        "nameEN": "Chicken",
+        "nameES": "Chicken",
+        "nameCA": "Chicken"
+      },
+      {
+        "id": 4,
+        "nameEN": "Seafood",
+        "nameES": "Seafood",
+        "nameCA": "Seafood"
+      },
+      {
+        "id": 5,
+        "nameEN": "Green beans",
+        "nameES": "Green beans",
+        "nameCA": "Green beans"
+      }
+    ],
+    "descriptionEN": "Traditional Spanish rice dish with chicken, seafood, and vegetables.",
+    "descriptionES": "Traditional Spanish rice dish with chicken, seafood, and vegetables.",
+    "descriptionCA": "Traditional Spanish rice dish with chicken, seafood, and vegetables.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 22,
+    "nameEN": "Moussaka",
+    "nameES": "Musaca",
+    "nameCA": "Musaca",
+    "category": {
+      "id": 7,
+      "nameEN": "Greek",
+      "nameES": "Griega",
+      "nameCA": "Grega"
+    },
+    "ingredients": [
+      {
+        "id": 1,
+        "nameEN": "Eggplant",
+        "nameES": "Eggplant",
+        "nameCA": "Eggplant"
+      },
+      {
+        "id": 2,
+        "nameEN": "Potatoes",
+        "nameES": "Potatoes",
+        "nameCA": "Potatoes"
+      },
+      {
+        "id": 3,
+        "nameEN": "Ground beef",
+        "nameES": "Ground beef",
+        "nameCA": "Ground beef"
+      },
+      {
+        "id": 4,
+        "nameEN": "Tomato sauce",
+        "nameES": "Tomato sauce",
+        "nameCA": "Tomato sauce"
+      },
+      {
+        "id": 5,
+        "nameEN": "Béchamel sauce",
+        "nameES": "Béchamel sauce",
+        "nameCA": "Béchamel sauce"
+      }
+    ],
+    "descriptionEN": "Layered Greek dish with eggplant, potatoes, and ground meat topped with béchamel.",
+    "descriptionES": "Layered Greek dish with eggplant, potatoes, and ground meat topped with béchamel.",
+    "descriptionCA": "Layered Greek dish with eggplant, potatoes, and ground meat topped with béchamel.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 23,
+    "nameEN": "Kung Pao Chicken",
+    "nameES": "Pollo Kung Pao",
+    "nameCA": "Pollastre Kung Pao",
+    "category": {
+      "id": 8,
+      "nameEN": "Chinese",
+      "nameES": "China",
+      "nameCA": "Xinesa"
+    },
+    "ingredients": [
+      {
+        "id": 1,
+        "nameEN": "Chicken",
+        "nameES": "Chicken",
+        "nameCA": "Chicken"
+      },
+      {
+        "id": 2,
+        "nameEN": "Peanuts",
+        "nameES": "Peanuts",
+        "nameCA": "Peanuts"
+      },
+      {
+        "id": 3,
+        "nameEN": "Chili peppers",
+        "nameES": "Chili peppers",
+        "nameCA": "Chili peppers"
+      },
+      {
+        "id": 4,
+        "nameEN": "Soy sauce",
+        "nameES": "Soy sauce",
+        "nameCA": "Soy sauce"
+      },
+      { "id": 5, "nameEN": "Garlic", "nameES": "Garlic", "nameCA": "Garlic" }
+    ],
+    "descriptionEN": "Spicy stir-fry dish with chicken, peanuts, and chili peppers.",
+    "descriptionES": "Spicy stir-fry dish with chicken, peanuts, and chili peppers.",
+    "descriptionCA": "Spicy stir-fry dish with chicken, peanuts, and chili peppers.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 24,
+    "nameEN": "Pad Thai",
+    "nameES": "Pad Thai",
+    "nameCA": "Pad Thai",
+    "category": {
+      "id": 9,
+      "nameEN": "Thai",
+      "nameES": "Tailandesa",
+      "nameCA": "Tailandesa"
+    },
+    "ingredients": [
+      {
+        "id": 1,
+        "nameEN": "Rice noodles",
+        "nameES": "Rice noodles",
+        "nameCA": "Rice noodles"
+      },
+      { "id": 2, "nameEN": "Shrimp", "nameES": "Shrimp", "nameCA": "Shrimp" },
+      { "id": 3, "nameEN": "Eggs", "nameES": "Eggs", "nameCA": "Eggs" },
+      {
+        "id": 4,
+        "nameEN": "Bean sprouts",
+        "nameES": "Bean sprouts",
+        "nameCA": "Bean sprouts"
+      },
+      { "id": 5, "nameEN": "Peanuts", "nameES": "Peanuts", "nameCA": "Peanuts" }
+    ],
+    "descriptionEN": "Thai stir-fried noodles with shrimp, eggs, and peanuts.",
+    "descriptionES": "Thai stir-fried noodles with shrimp, eggs, and peanuts.",
+    "descriptionCA": "Thai stir-fried noodles with shrimp, eggs, and peanuts.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  },
+  {
+    "id": 25,
+    "nameEN": "Cheeseburger",
+    "nameES": "Hamburguesa con Queso",
+    "nameCA": "Hamburguesa amb Formatge",
+    "category": {
+      "id": 10,
+      "nameEN": "American",
+      "nameES": "Estadounidense",
+      "nameCA": "Estatunidenca"
+    },
+    "ingredients": [
+      {
+        "id": 1,
+        "nameEN": "Beef patty",
+        "nameES": "Beef patty",
+        "nameCA": "Beef patty"
+      },
+      {
+        "id": 2,
+        "nameEN": "Cheddar cheese",
+        "nameES": "Cheddar cheese",
+        "nameCA": "Cheddar cheese"
+      },
+      {
+        "id": 3,
+        "nameEN": "Lettuce",
+        "nameES": "Lettuce",
+        "nameCA": "Lettuce"
+      },
+      { "id": 4, "nameEN": "Tomato", "nameES": "Tomato", "nameCA": "Tomato" },
+      {
+        "id": 5,
+        "nameEN": "Burger bun",
+        "nameES": "Burger bun",
+        "nameCA": "Burger bun"
+      }
+    ],
+    "descriptionEN": "Classic American cheeseburger with beef, cheese, and vegetables.",
+    "descriptionES": "Classic American cheeseburger with beef, cheese, and vegetables.",
+    "descriptionCA": "Classic American cheeseburger with beef, cheese, and vegetables.",
+    "photos": [
+      "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
+      "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
+      "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg"
+    ],
+    "status": "APPROVED"
+  }
+]

@@ -58,7 +58,8 @@
     "category": "Category",
     "categoryRequired": "category is required",
     "chooseImages": "Choose images",
-    "imageError": "Please select at least one image"
+    "imageError": "Please select at least one image",
+    "all": "All"
   },
   "ES": {
     "home": "Inicio",
@@ -119,7 +120,8 @@
     "category": "Categoría",
     "categoryRequired": "La categoría es obligatoria",
     "chooseImages": "Elegir imágenes",
-    "imageError": "Por favor seleccione al menos una imagen"
+    "imageError": "Por favor seleccione al menos una imagen",
+    "all": "todas"
   },
   "CA": {
     "home": "Inici",
@@ -180,6 +182,7 @@
     "category": "Categoria",
     "categoryRequired": "La categoria és obligatòria",
     "chooseImages": "Triar imatges",
-    "imageError": "Si us plau seleccioneu almenys una imatge"
+    "imageError": "Si us plau seleccioneu almenys una imatge",
+    "all": "totes"
   }
 }
