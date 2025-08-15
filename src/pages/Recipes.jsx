@@ -4,6 +4,7 @@ import Categories from "../components/Categories";
 import RecipeList from "../components/RecipeList";
 import { useState } from "react";
 import IngredientFilter from "../components/IngredientFilter";
+import SearchBar from "../components/SearchBar";
 
 const StyledContainer = Styled.div`
   width: 1264px;
@@ -54,9 +55,14 @@ const StyledSidebar = Styled.aside`
   width: 284px;
 `;
 
+const StyledList = Styled.div`
+  width: calc(100% - 320px);
+`;
+
 const Recipes = () => {
   const [activeCategory, setActiveCategory] = useState(null);
   const [selectedIngredients, setSelectedIngredients] = useState([]);
+  const [search, setSearch] = useState("");
 
   return (
     <StyledContainer>
@@ -66,13 +72,17 @@ const Recipes = () => {
       </StyledBanner>
       <StyledContent>
         <StyledSidebar>
-          <IngredientFilter setSelectedIngredients={setSelectedIngredients} />
           <Categories setActiveCategory={setActiveCategory} />
+          <IngredientFilter setSelectedIngredients={setSelectedIngredients} />
         </StyledSidebar>
-        <RecipeList
-          category={activeCategory}
-          ingredients={selectedIngredients}
-        />
+        <StyledList>
+          <SearchBar setSearch={setSearch} />
+          <RecipeList
+            category={activeCategory}
+            ingredients={selectedIngredients}
+            search={search}
+          />
+        </StyledList>
       </StyledContent>
     </StyledContainer>
   );

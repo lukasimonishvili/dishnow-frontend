@@ -1,23 +1,23 @@
 import Styled from "styled-components";
-import { useLanguage } from "../contexts/languageContext.jsx";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import langData from "../assets/lang.json";
+import { useLanguage } from "../contexts/languageContext.jsx";
 import recipeData from "../assets/recipes.json";
 import heartIcon from "../assets/img/heart.svg";
 
 const StyledListWrapper = Styled.div`
-    width: calc(100% - 320px);
+  width: 100%;
 
-    & > h3 {
-      text-align: center;
-      font-family: 'Poppins';
-      font-style: normal;
-      font-weight: 600;
-      font-size: 22px;
-      line-height: 33px;
-      color: #252525;
-    }
+  & > h3 {
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+    color: #252525;
+  }
 `;
 
 const StyledList = Styled.div`
@@ -83,7 +83,7 @@ const StyledListItem = Styled.div`
   }
 `;
 
-const RecipeList = ({ category, ingredients }) => {
+const RecipeList = ({ category, ingredients, search }) => {
   const { language } = useLanguage();
   const [recipes, setRecipes] = useState([]);
 
@@ -96,8 +96,12 @@ const RecipeList = ({ category, ingredients }) => {
     if (ingredients.length) {
       console.log(ingredients);
     }
+
+    if (search.length) {
+      console.log("search");
+    }
     setRecipes(result);
-  }, [category, ingredients.length]);
+  }, [category, ingredients.length, search]);
 
   return (
     <StyledListWrapper>
@@ -111,7 +115,9 @@ const RecipeList = ({ category, ingredients }) => {
             <h5>{recipe.category["name" + language]}</h5>
             <h3>{recipe["name" + language]}</h3>
             <div className="footer">
-              <Link to={"/recipe/" + recipe.id}>See more</Link>
+              <Link to={"/recipe/" + recipe.id}>
+                {langData[language].seeMore}
+              </Link>
               <img src={heartIcon} />
             </div>
           </StyledListItem>

@@ -20,8 +20,6 @@ const StyledIngredientFilter = Styled.div`
 
 const IngredientFilter = ({ setSelectedIngredients }) => {
   const {
-    register,
-    handleSubmit,
     control,
     formState: { errors },
   } = useForm();

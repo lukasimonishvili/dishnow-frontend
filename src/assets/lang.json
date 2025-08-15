@@ -59,7 +59,9 @@
     "categoryRequired": "category is required",
     "chooseImages": "Choose images",
     "imageError": "Please select at least one image",
-    "all": "All"
+    "all": "All",
+    "search": "Search",
+    "seeMore": "See more"
   },
   "ES": {
     "home": "Inicio",
@@ -121,7 +123,9 @@
     "categoryRequired": "La categoría es obligatoria",
     "chooseImages": "Elegir imágenes",
     "imageError": "Por favor seleccione al menos una imagen",
-    "all": "todas"
+    "all": "todas",
+    "search": "Busqueda",
+    "seeMore": "Ver más"
   },
   "CA": {
     "home": "Inici",
@@ -183,6 +187,8 @@
     "categoryRequired": "La categoria és obligatòria",
     "chooseImages": "Triar imatges",
     "imageError": "Si us plau seleccioneu almenys una imatge",
-    "all": "totes"
+    "all": "totes",
+    "search": "cerca",
+    "seeMore": "Veure més"
   }
 }

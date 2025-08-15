@@ -7,27 +7,27 @@ const StyledCategories = Styled.div`
     width: 100%;
 
     & > h2 {
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 22px;
-        line-height: 33px;
-        color: #252525;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 33px;
+      color: #252525;
     }
 
     & > div {
-        margin-top: 30px;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 17px;
-        color: #253D4E;
+      margin-top: 30px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: #253D4E;
 
-        & > div {
-            padding-bottom: 20px;
-            cursor: pointer;
-        }
+      & > div {
+          padding-bottom: 20px;
+          cursor: pointer;
+      }
     }
 `;
 
