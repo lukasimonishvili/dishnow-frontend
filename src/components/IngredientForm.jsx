@@ -1,4 +1,5 @@
 import Styled from "styled-components";
+import api from "../api.jsx";
 
 const StyledForm = Styled.form`
     width: 385px;
@@ -65,7 +66,7 @@ const StyledDiscard = Styled.div`
 `;
 
 const IngredientForm = ({ ingredient, setActiveIngredient }) => {
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     const newIngredient = {
       nameEN: e.target[0].value,
@@ -73,7 +74,18 @@ const IngredientForm = ({ ingredient, setActiveIngredient }) => {
       nameCA: e.target[2].value,
     };
 
-    console.log(newIngredient);
+    let url = "add";
+    if (!!ingredient) {
+      url = "update";
+      newIngredient.id = ingredient.id;
+    }
+    try {
+      const result = await api.post("/ingredient/" + url, newIngredient);
+      console.log(result);
+    } catch (err) {
+      console.log(err);
+    }
+
     setActiveIngredient(null);
   };
 
