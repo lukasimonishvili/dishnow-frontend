@@ -1,4 +1,6 @@
 import Styled from "styled-components";
+import api from "../api.jsx";
+import { useNotification } from "../contexts/notificationContext.jsx";
 
 const StyledForm = Styled.form`
     width: 385px;
@@ -64,8 +66,10 @@ const StyledDiscard = Styled.div`
     margin-left: 16px;
 `;
 
-const CategoryForm = ({ category, setActiveCategory }) => {
-  const onSubmit = (e) => {
+const CategoryForm = ({ category, setActiveCategory, setFetchTrigger }) => {
+  const { setNotification } = useNotification();
+
+  const onSubmit = async (e) => {
     e.preventDefault();
     const newCategory = {
       nameEN: e.target[0].value,
@@ -73,8 +77,31 @@ const CategoryForm = ({ category, setActiveCategory }) => {
       nameCA: e.target[2].value,
     };
 
-    console.log(newCategory);
+    let url = "add";
+    let notify = "created";
+    let apiCall = api.post;
+    if (!!category) {
+      newIngredient.id = category.id;
+      url = "update/" + newCategory.id;
+      notify = "updated";
+      apiCall = api.put;
+    }
+    try {
+      const result = await apiCall("/category/" + url, newCategory);
+      setNotification({ text: "Category is " + notify, status: "success" });
+      setFetchTrigger((prev) => prev + 1);
+    } catch (err) {
+      console.log(err);
+      setNotification({
+        text: "Something went wrong! please try again.",
+        status: "error",
+      });
+    }
+
     setActiveCategory(null);
+    e.target[0].value = "";
+    e.target[1].value = "";
+    e.target[2].value = "";
   };
 
   return (
