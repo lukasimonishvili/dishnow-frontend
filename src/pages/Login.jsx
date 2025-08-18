@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../contexts/languageContext.jsx";
 import langData from "../assets/lang.json";
+import api from "../api.jsx";
 
 const StyledLogin = Styled.div`
   width: 454px;
@@ -175,8 +176,18 @@ const Login = () => {
   } = useForm();
   const { language } = useLanguage();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data);
+    let loginData = {
+      "email": data.email,
+      "password": data.password
+    }
+    try {
+      const result = await api.post("/login", loginData);
+      localStorage.setItem("token", result.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
