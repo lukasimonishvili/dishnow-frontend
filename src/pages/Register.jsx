@@ -1,11 +1,10 @@
 import Styled from "styled-components";
-import googleIcon from "../assets/img/google.png";
-import facebookIcon from "../assets/img/facebook.png";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../contexts/languageContext.jsx";
 import langData from "../assets/lang.json";
 import api from "../api.jsx";
+import { useNotification } from "../contexts/notificationContext.jsx";
 
 const StyledRegister = Styled.div`
   width: 454px;
@@ -27,61 +26,6 @@ const StyledRegister = Styled.div`
     letter-spacing: -0.04em;
     color: #1B1818;
     margin-bottom: 32px;
-  }
-`;
-
-const StyledSocialButton = Styled.button`
-  display: block;
-  width: 100%;
-  height: 55px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #FFFFFF;
-  border-width: 1px 1px 2px 1px;
-  border-style: solid;
-  border-color: #E3E3E3;
-  border-radius: 15px;
-  margin-top: 16px;
-
-  & > img {
-    width: 20px;
-    height: 20px;
-  }
-  
-  & > span {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 145%;
-    color: #344054;
-    padding-left: 16px;
-  }
-`;
-
-const StyledDivider = Styled.div`
-  width: 100%;
-  height: 1px;
-  background: #F0F2F5;
-  margin: 46px 0;
-  position: relative;
-
-  &:after {
-    content: "${[(props) => props.content]}";
-    position: absolute;
-    width: 32px;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, -50%);
-    background: #FFFFFF;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    text-align: center;
-    color: #667185;
   }
 `;
 
@@ -174,9 +118,11 @@ const Register = () => {
     handleSubmit,
     watch,
     formState: { errors },
+    reset,
   } = useForm();
   const password = watch("password");
   const { language } = useLanguage();
+  const { setNotification } = useNotification();
 
   const onSubmit = async (data) => {
     const inputDateStr = data.birthDay;
@@ -185,34 +131,32 @@ const Register = () => {
     const formattedDate = dateObj.toISOString().split("T")[0];
 
     let registerData = {
-      "name": data.name,
-      "lastName": data.lastName,
-      "birthday": formattedDate,
-      "email": data.email,
-      "password": data.password,
-      "confirmPassword": data.confirmPassword
-    }
+      name: data.name,
+      lastName: data.lastName,
+      birthday: formattedDate,
+      email: data.email,
+      password: data.password,
+      confirmPassword: data.confirmPassword,
+    };
     try {
       const result = await api.post("/user/register", registerData);
+      setNotification({
+        text: langData[language].registerSuccess,
+        status: "success",
+      });
+      reset();
     } catch (error) {
       console.error(error);
+      setNotification({
+        text: langData[language].somethingWrong,
+        status: "error",
+      });
     }
   };
 
   return (
     <StyledRegister>
       <h2>{langData[language].createAccount}</h2>
-      <StyledSocialButton>
-        <img src={googleIcon} alt="" />
-        <span>{langData[language].signUpGoogle}</span>
-      </StyledSocialButton>
-      <StyledSocialButton>
-        <img src={facebookIcon} alt="" />
-        <span>{langData[language].signUpFacebook}</span>
-      </StyledSocialButton>
-
-      <StyledDivider content={langData[language].or} />
-
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
         <StyledInputWrapper error={errors.name}>
           <label htmlFor="name">{langData[language].name}</label>

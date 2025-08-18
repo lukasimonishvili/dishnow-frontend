@@ -5,15 +5,18 @@ import App from "./App.jsx";
 import { LanguageProvider } from "./contexts/languageContext.jsx";
 import { NotificationProvider } from "./contexts/notificationContext.jsx";
 import "./index.css";
+import { UserProvider } from "./contexts/userContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
-      <LanguageProvider>
-        <NotificationProvider>
-          <App />
-        </NotificationProvider>
-      </LanguageProvider>
-    </BrowserRouter>
+    <UserProvider>
+      <BrowserRouter>
+        <LanguageProvider>
+          <NotificationProvider>
+            <App />
+          </NotificationProvider>
+        </LanguageProvider>
+      </BrowserRouter>
+    </UserProvider>
   </StrictMode>
 );

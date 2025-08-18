@@ -191,7 +191,7 @@ const AddRecipe = () => {
 
   return (
     <StyledAddRecipe>
-      <h2>{langData[language].addIngredients}</h2>
+      <h2>{langData[language].addRecipe}</h2>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
         <StyledInputWrapper error={errors.name}>
           <label htmlFor="name">{langData[language].name}</label>
@@ -253,7 +253,7 @@ const AddRecipe = () => {
             placeholder={langData[language].chooseImages}
           />
         </StyledInputWrapper>
-        <button>{langData[language].addIngredients}</button>
+        <button>{langData[language].addRecipe}</button>
       </StyledForm>
     </StyledAddRecipe>
   );

@@ -3,6 +3,8 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import AppRouter from "./routes/AppRouter";
 import Styled from "styled-components";
+import { useEffect } from "react";
+import { useUser } from "./contexts/userContext";
 
 const StyledSpacer = Styled.div`
   width: 100%;
@@ -15,6 +17,11 @@ const StyledSpacer = Styled.div`
 `;
 
 const App = () => {
+  const { logIn } = useUser();
+
+  useEffect(() => {
+    logIn();
+  }, []);
   return (
     <>
       <Notification />

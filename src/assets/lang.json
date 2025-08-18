@@ -63,7 +63,12 @@
     "search": "Search",
     "seeMore": "See more",
     "bannerTitle": "Your next favorite meal awaits",
-    "bannerText": "Explore, cook, and enjoy"
+    "bannerText": "Explore, cook, and enjoy",
+    "somethingWrong": "Something went wrong! please try again later.",
+    "registerSuccess": "Registration went successfully",
+    "addRecipe": "Add recipe",
+    "logOut": "Log out",
+    "adminPanel": "Admin panel"
   },
   "ES": {
     "home": "Inicio",
@@ -129,7 +134,12 @@
     "search": "Busqueda",
     "seeMore": "Ver más",
     "bannerTitle": "Tu próxima comida favorita te espera",
-    "bannerText": "Explora, cocina y disfruta"
+    "bannerText": "Explora, cocina y disfruta",
+    "somethingWrong": "Algo salió mal! Por favor, inténtalo de nuevo más tarde.",
+    "registerSuccess": "El registro se realizó correctamente",
+    "addRecipe": "Añadir receta",
+    "logOut": "Cerrar sesión",
+    "adminPanel": "Panel de administración"
   },
   "CA": {
     "home": "Inici",
@@ -195,6 +205,11 @@
     "search": "cerca",
     "seeMore": "Veure més",
     "bannerTitle": "El teu proper àpat preferit t'espera",
-    "bannerText": "Explora, cuina i gaudeix"
+    "bannerText": "Explora, cuina i gaudeix",
+    "somethingWrong": "S'ha produït un error! Torna-ho a intentar més tard.",
+    "registerSuccess": "El registre s'ha fet correctament",
+    "addRecipe": "Afegeix una recepta",
+    "logOut": "Tanca la sessió",
+    "adminPanel": "Panell d'administració"
   }
 }

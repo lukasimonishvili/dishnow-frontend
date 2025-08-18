@@ -14,25 +14,38 @@ import AdminRecipes from "../pages/AdminRecipes.jsx";
 import AdminRecipe from "../pages/AdminRecipe.jsx";
 import Ingredients from "../pages/Ingredients.jsx";
 import AddRecipe from "../pages/AddRecipe.jsx";
+import { useUser } from "../contexts/userContext.jsx";
 
 const AppRouter = () => {
+  const { user } = useUser();
   return (
     <Routes>
+      {!user && (
+        <>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/recover-password" element={<RecoverPassword />} />
+        </>
+      )}
       <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
       <Route path="/recipes" element={<Recipes />} />
-      <Route path="/forgot-password" element={<ForgotPassword />} />
-      <Route path="/recover-password" element={<RecoverPassword />} />
       <Route path="/recipe/:id" element={<Recipe />} />
-      <Route path="/add-recipe" element={<AddRecipe />} />
-      <Route path="admin" element={<AdminPanel />}>
-        <Route path="categories" element={<Categories />} />
-        <Route path="people" element={<People />} />
-        <Route path="recipe/:id" element={<AdminRecipe />} />
-        <Route path="ingredients" element={<Ingredients />} />
-        <Route index element={<AdminRecipes />} />
-      </Route>
+
+      {!!user && (
+        <>
+          <Route path="/add-recipe" element={<AddRecipe />} />
+        </>
+      )}
+      {!!user && user.role === "ADMIN" && (
+        <Route path="admin" element={<AdminPanel />}>
+          <Route path="categories" element={<Categories />} />
+          <Route path="people" element={<People />} />
+          <Route path="recipe/:id" element={<AdminRecipe />} />
+          <Route path="ingredients" element={<Ingredients />} />
+          <Route index element={<AdminRecipes />} />
+        </Route>
+      )}
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

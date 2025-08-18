@@ -179,11 +179,11 @@ const Recipes = () => {
           <StyledCloseMenuButton onClick={() => setIsMenuOpen(false)}>
             X
           </StyledCloseMenuButton>
+          <SearchBar setSearch={setSearch} />
           <Categories setActiveCategory={setActiveCategory} />
-          <IngredientFilter setSelectedIngredients={setSelectedIngredients} />
         </StyledSidebar>
         <StyledList>
-          <SearchBar setSearch={setSearch} />
+          <IngredientFilter setSelectedIngredients={setSelectedIngredients} />
           <RecipeList
             category={activeCategory}
             ingredients={selectedIngredients}

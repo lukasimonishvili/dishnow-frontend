@@ -6,19 +6,28 @@ import { useLanguage } from "../contexts/languageContext.jsx";
 const StyledSearchBar = Styled.div`
     margin-bottom: 30px;
 
+    & > h2 {
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 33px;
+      color: #252525;
+    }
+
     & > input {
-        width: 100%;
-        height: 56px;
-        background: #FFFFFF;
-        border-width: 1px 1px 2px 1px;
-        border-style: solid;
-        border-color:  #E3E3E3;
-        border-radius: 15px;
-        font-family: 'Inter';
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 145%;
-        padding-left: 16px;
+      width: 100%;
+      height: 56px;
+      background: #FFFFFF;
+      border-width: 1px 1px 2px 1px;
+      border-style: solid;
+      border-color:  #E3E3E3;
+      border-radius: 15px;
+      font-family: 'Inter';
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 145%;
+      padding-left: 16px;
     }
 `;
 
@@ -38,6 +47,7 @@ const SearchBar = ({ setSearch }) => {
 
   return (
     <StyledSearchBar>
+      <h2>{langData[language].search}</h2>
       <input
         type="text"
         placeholder={langData[language].search + "..."}

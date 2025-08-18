@@ -4,6 +4,7 @@ import logoImage from "../assets/img/logo.png";
 import { useState } from "react";
 import { useLanguage } from "../contexts/languageContext.jsx";
 import langData from "../assets/lang.json";
+import { useUser } from "../contexts/userContext.jsx";
 
 const StyledComponents = Styled.header`
     width: 100%;
@@ -188,6 +189,7 @@ const Header = () => {
   const [isLnaguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
   const { changeLanguage, language, whiteList } = useLanguage();
+  const { user, logOut } = useUser();
 
   const toggleLanguageMenu = () => {
     setIsLanguageMenuOpen(!isLnaguageMenuOpen);
@@ -211,12 +213,34 @@ const Header = () => {
           <Link onClick={toggleBurgerMenu} to="/recipes">
             {langData[language].recipes}
           </Link>
-          <Link onClick={toggleBurgerMenu} to="/login">
-            {langData[language].login}
-          </Link>
-          <Link onClick={toggleBurgerMenu} to="/register">
-            {langData[language].register}
-          </Link>
+          {!user && (
+            <>
+              <Link onClick={toggleBurgerMenu} to="/login">
+                {langData[language].login}
+              </Link>
+              <Link onClick={toggleBurgerMenu} to="/register">
+                {langData[language].register}
+              </Link>
+            </>
+          )}
+          {!!user && user.role === "ADMIN" && (
+            <Link to="/admin">{langData[language].adminPanel}</Link>
+          )}
+          {!!user && (
+            <>
+              <Link to="/add-recipe">{langData[language].addRecipe}</Link>
+              <Link to="/admin">{langData[language].adminPanel}</Link>
+              <Link
+                to="/"
+                onClick={() => {
+                  toggleBurgerMenu();
+                  logOut();
+                }}
+              >
+                {langData[language].logOut}
+              </Link>
+            </>
+          )}
           <StyledLanguagePicker
             islnaguagemenuopen={isLnaguageMenuOpen}
             onClick={toggleLanguageMenu}
