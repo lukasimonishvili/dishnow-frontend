@@ -3,7 +3,7 @@ import Styled from "styled-components";
 import editIcon from "../assets/img/edit.svg";
 import deleteIcon from "../assets/img/delete.svg";
 import IngredientForm from "../components/IngredientForm";
-import api from "../api.jsx";
+import api, { secureApi } from "../api.jsx";
 import { useNotification } from "../contexts/notificationContext.jsx";
 
 const StyledIngredients = Styled.div`
@@ -97,7 +97,7 @@ const Ingredients = () => {
   const deleteIngredient = async () => {
     const idOfIngredientToDelete = ingredients[deletingIndex].id;
     try {
-      await api.delete("/ingredient/remove/" + idOfIngredientToDelete);
+      await secureApi.delete("/ingredient/remove/" + idOfIngredientToDelete);
       setNotification({ text: "ingredient was deleted", status: "success" });
       setFetchTrigger((prev) => prev + 1);
     } catch (err) {

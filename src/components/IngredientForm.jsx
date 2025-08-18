@@ -1,5 +1,5 @@
 import Styled from "styled-components";
-import api from "../api.jsx";
+import { secureApi } from "../api.jsx";
 import { useNotification } from "../contexts/notificationContext.jsx";
 
 const StyledForm = Styled.form`
@@ -83,12 +83,12 @@ const IngredientForm = ({
 
     let url = "add";
     let notify = "created";
-    let apiCall = api.post;
+    let apiCall = secureApi.post;
     if (!!ingredient) {
       newIngredient.id = ingredient.id;
       url = "update/" + newIngredient.id;
       notify = "updated";
-      apiCall = api.put;
+      apiCall = secureApi.put;
     }
     try {
       const result = await apiCall("/ingredient/" + url, newIngredient);

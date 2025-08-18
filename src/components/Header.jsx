@@ -223,7 +223,7 @@ const Header = () => {
               </Link>
             </>
           )}
-          {!!user && user.role === "ADMIN" && (
+          {!!user && user.role !== "USER" && (
             <Link to="/admin">{langData[language].adminPanel}</Link>
           )}
           {!!user && (

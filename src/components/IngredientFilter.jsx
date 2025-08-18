@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import IngredientSelect from "./IngredientSelect";
 import { useLanguage } from "../contexts/languageContext.jsx";
 import langData from "../assets/lang.json";
+import api from "../api.jsx";
 
 const StyledIngredientFilter = Styled.div`
     width: 100%;
@@ -19,51 +20,25 @@ const StyledIngredientFilter = Styled.div`
 `;
 
 const IngredientFilter = ({ setSelectedIngredients }) => {
-  const {
-    control,
-    formState: { errors },
-  } = useForm();
+  const { control } = useForm();
   const { language } = useLanguage();
   const [ingredients, setIngredients] = useState([]);
 
+  const fetchIngredients = async () => {
+    try {
+      const response = await api.get("/ingredient/getAll");
+      setIngredients(
+        response.data.map((ingredient) => {
+          return { value: ingredient.id, label: ingredient["name" + language] };
+        })
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
-    const mockIngredients = [
-      {
-        id: 1,
-        nameEN: "onion",
-        nameES: "cebolla",
-        nameCA: "ceba",
-      },
-      {
-        id: 2,
-        nameEN: "pasta",
-        nameES: "pasta",
-        nameCA: "pasta",
-      },
-      {
-        id: 3,
-        nameEN: "bacon",
-        nameES: "bacon",
-        nameCA: "bacon",
-      },
-      {
-        id: 4,
-        nameEN: "salt",
-        nameES: "sal",
-        nameCA: "sal",
-      },
-      {
-        id: 5,
-        nameEN: "water",
-        nameES: "agua",
-        nameCA: "aigua",
-      },
-    ];
-    setIngredients(
-      mockIngredients.map((ingredient) => {
-        return { value: ingredient.id, label: ingredient["name" + language] };
-      })
-    );
+    fetchIngredients();
   }, []);
 
   return (

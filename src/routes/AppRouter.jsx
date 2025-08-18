@@ -37,10 +37,12 @@ const AppRouter = () => {
           <Route path="/add-recipe" element={<AddRecipe />} />
         </>
       )}
-      {!!user && user.role === "ADMIN" && (
+      {!!user && user.role !== "USER" && (
         <Route path="admin" element={<AdminPanel />}>
           <Route path="categories" element={<Categories />} />
-          <Route path="people" element={<People />} />
+          {user.role === "ADMIN" && (
+            <Route path="people" element={<People />} />
+          )}
           <Route path="recipe/:id" element={<AdminRecipe />} />
           <Route path="ingredients" element={<Ingredients />} />
           <Route index element={<AdminRecipes />} />

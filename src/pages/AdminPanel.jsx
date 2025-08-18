@@ -4,6 +4,7 @@ import peopleIcon from "../assets/img/people.svg";
 import recipesIcon from "../assets/img/recipes.svg";
 import categoriesIcon from "../assets/img/categories.svg";
 import ingredientsIcon from "../assets/img/ingredients.svg";
+import { useUser } from "../contexts/userContext";
 
 const StyledAdminPanel = Styled.div`
     width: 100%;
@@ -57,6 +58,7 @@ const StyledSidebar = Styled.aside`
 `;
 
 const AdminPanel = () => {
+  const { user } = useUser();
   return (
     <StyledAdminPanel>
       <StyledSidebar>
@@ -64,10 +66,12 @@ const AdminPanel = () => {
           <img src={recipesIcon} alt="" />
           <span>Recipes</span>
         </Link>
-        <Link to="/admin/people">
-          <img src={peopleIcon} alt="" />
-          <span>People</span>
-        </Link>
+        {!!user && user.role === "ADMIN" && (
+          <Link to="/admin/people">
+            <img src={peopleIcon} alt="" />
+            <span>People</span>
+          </Link>
+        )}
         <Link to="/admin/categories">
           <img src={categoriesIcon} alt="" />
           <span>Categories</span>

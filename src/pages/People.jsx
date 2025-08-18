@@ -1,5 +1,7 @@
 import Styled from "styled-components";
 import { useState, useEffect } from "react";
+import { secureApi } from "../api";
+import { useNotification } from "../contexts/notificationContext";
 
 const StyledPeople = Styled.div`
     width: 100%;
@@ -71,106 +73,46 @@ const People = () => {
     index: -1,
     status: "USER",
   });
+  const [fetcher, setFetcher] = useState(0);
+  const { setNotification } = useNotification();
+
+  const fetchUsers = async () => {
+    try {
+      const response = await secureApi.get("/user/getAll");
+      setUsers(response.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
-    const mockUserData = [
-      {
-        id: 1,
-        name: "John",
-        lastName: "Doe",
-        email: "johndoe@gmail.com",
-        role: "USER",
-        verified: true,
-      },
-      {
-        id: 2,
-        name: "Jane",
-        lastName: "Smith",
-        email: "janesmith@example.com",
-        role: "ADMIN",
-        verified: true,
-      },
-      {
-        id: 3,
-        name: "Michael",
-        lastName: "Brown",
-        email: "michaelbrown@example.com",
-        role: "USER",
-        verified: false,
-      },
-      {
-        id: 4,
-        name: "Emily",
-        lastName: "Johnson",
-        email: "emilyjohnson@example.com",
-        role: "MODERATOR",
-        verified: true,
-      },
-      {
-        id: 5,
-        name: "David",
-        lastName: "Williams",
-        email: "davidwilliams@example.com",
-        role: "USER",
-        verified: true,
-      },
-      {
-        id: 6,
-        name: "Sarah",
-        lastName: "Davis",
-        email: "sarahdavis@example.com",
-        role: "ADMIN",
-        verified: false,
-      },
-      {
-        id: 7,
-        name: "Daniel",
-        lastName: "Miller",
-        email: "danielmiller@example.com",
-        role: "USER",
-        verified: true,
-      },
-      {
-        id: 8,
-        name: "Olivia",
-        lastName: "Wilson",
-        email: "oliviawilson@example.com",
-        role: "MODERATOR",
-        verified: false,
-      },
-      {
-        id: 9,
-        name: "James",
-        lastName: "Taylor",
-        email: "jamestaylor@example.com",
-        role: "ADMIN",
-        verified: true,
-      },
-      {
-        id: 10,
-        name: "Sophia",
-        lastName: "Anderson",
-        email: "sophiaanderson@example.com",
-        role: "USER",
-        verified: false,
-      },
-    ];
-
-    setUsers(mockUserData);
-  }, []);
+    fetchUsers();
+  }, [fetcher]);
 
   const handleRoleChange = (e, index) => {
     setUpdatingUser({ index, status: e.target.value });
   };
 
-  const updateUserStatus = () => {
-    const userToUpdateId = users[updatingUser.index].id;
-    console.log(
-      "we are about to change user by id " +
-        userToUpdateId +
-        " to status " +
-        updatingUser.status
-    );
+  const updateUserStatus = async () => {
+    const userToUpdate = users[updatingUser.index];
+    userToUpdate.role = updatingUser.status === "MANAGER" ? 1 : 0;
+    try {
+      const response = await secureApi.post(
+        "/user/update/" + userToUpdate.id,
+        userToUpdate
+      );
+      setUpdatingUser({ index: -1, status: "USER" });
+      setFetcher((prev) => prev + 1);
+      setNotification({
+        text: "User role changed",
+        status: "success",
+      });
+    } catch (err) {
+      setNotification({
+        text: "Somethin went wrong! try again later",
+        status: "error",
+      });
+    }
     setUpdatingUser({ index: -1, status: "USER" });
   };
 
@@ -193,25 +135,34 @@ const People = () => {
             <div>{user.lastName}</div>
             <div>{user.email}</div>
             <div>
-              <select
-                defaultValue={user.role}
-                onChange={(e) => handleRoleChange(e, index)}
-              >
-                <option value="USER">User</option>
-                <option value="ADMIN">Admin</option>
-                <option value="MODERATOR">Moderator</option>
-              </select>
-              <StyledUpdateRolePopup
-                displayvalue={index === updatingUser.index ? "block" : "none"}
-              >
-                <p>Are you sure?</p>
-                <button onClick={updateUserStatus}>Yes</button>
-                <button
-                  onClick={() => setUpdatingUser({ index: -1, status: "USER" })}
-                >
-                  No
-                </button>
-              </StyledUpdateRolePopup>
+              {user.role === "ADMIN" ? (
+                <div>{user.role}</div>
+              ) : (
+                <>
+                  <select
+                    defaultValue={user.role}
+                    onChange={(e) => handleRoleChange(e, index)}
+                  >
+                    <option value="USER">User</option>
+                    <option value="MANAGER">MANAGER</option>
+                  </select>
+                  <StyledUpdateRolePopup
+                    displayvalue={
+                      index === updatingUser.index ? "block" : "none"
+                    }
+                  >
+                    <p>Are you sure?</p>
+                    <button onClick={updateUserStatus}>Yes</button>
+                    <button
+                      onClick={() =>
+                        setUpdatingUser({ index: -1, status: "USER" })
+                      }
+                    >
+                      No
+                    </button>
+                  </StyledUpdateRolePopup>
+                </>
+              )}
             </div>
             <div>{user.verified ? "yes" : "no"}</div>
           </div>
