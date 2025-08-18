@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../contexts/languageContext.jsx";
 import langData from "../assets/lang.json";
+import api from "../api.jsx";
 
 const StyledRegister = Styled.div`
   width: 454px;
@@ -177,8 +178,25 @@ const Register = () => {
   const password = watch("password");
   const { language } = useLanguage();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    const inputDateStr = data.birthDay;
+    const [day, month, year] = inputDateStr.split("/");
+    const dateObj = new Date(`${year}-${month}-${day}`);
+    const formattedDate = dateObj.toISOString().split("T")[0];
+
+    let registerData = {
+      "name": data.name,
+      "lastName": data.lastName,
+      "birthday": formattedDate,
+      "email": data.email,
+      "password": data.password,
+      "confirmPassword": data.confirmPassword
+    }
+    try {
+      const result = await api.post("/user/register", registerData);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
