@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import Styled from "styled-components";
 import editIcon from "../assets/img/edit.svg";
 import deleteIcon from "../assets/img/delete.svg";
-import CategoryForm from "../components/categoryForm";
-import api from "../api";
+import CategoryForm from "../components/CategoryForm";
+import api, { secureApi } from "../api";
+import { useNotification } from "../contexts/notificationContext";
 
 const SyledCategories = Styled.div`
     width: 100%;
@@ -78,11 +79,11 @@ const Categories = () => {
   const [activeCategory, setActiveCategory] = useState(null);
   const [deletingIndex, setDeletingIndex] = useState(-1);
   const [fetchTrigger, setFetchTrigger] = useState(0);
+  const { setNotification } = useNotification();
 
   const fatchCategories = async () => {
     try {
       const result = await api.get("/category/getAll");
-      console.log(result);
       setCategories(result.data);
     } catch (err) {
       console.log(err);
@@ -96,7 +97,7 @@ const Categories = () => {
   const deleteCategory = async () => {
     const idOfCategoryToDelete = categories[deletingIndex].id;
     try {
-      await api.delete("/category/remove/" + idOfCategoryToDelete);
+      await secureApi.delete("/category/remove/" + idOfCategoryToDelete);
       setNotification({ text: "ingredient was deleted", status: "success" });
       setFetchTrigger((prev) => prev + 1);
     } catch (err) {

@@ -1,5 +1,5 @@
 import Styled from "styled-components";
-import api from "../api.jsx";
+import { secureApi } from "../api.jsx";
 import { useNotification } from "../contexts/notificationContext.jsx";
 
 const StyledForm = Styled.form`
@@ -79,12 +79,12 @@ const CategoryForm = ({ category, setActiveCategory, setFetchTrigger }) => {
 
     let url = "add";
     let notify = "created";
-    let apiCall = api.post;
+    let apiCall = secureApi.post;
     if (!!category) {
-      newIngredient.id = category.id;
+      newCategory.id = category.id;
       url = "update/" + newCategory.id;
       notify = "updated";
-      apiCall = api.put;
+      apiCall = secureApi.put;
     }
     try {
       const result = await apiCall("/category/" + url, newCategory);
