@@ -1,5 +1,6 @@
 import Styled from "styled-components";
 import api from "../api.jsx";
+import { useNotification } from "../contexts/notificationContext.jsx";
 
 const StyledForm = Styled.form`
     width: 385px;
@@ -65,7 +66,13 @@ const StyledDiscard = Styled.div`
     margin-left: 16px;
 `;
 
-const IngredientForm = ({ ingredient, setActiveIngredient }) => {
+const IngredientForm = ({
+  ingredient,
+  setActiveIngredient,
+  setFetchTrigger,
+}) => {
+  const { setNotification } = useNotification();
+
   const onSubmit = async (e) => {
     e.preventDefault();
     const newIngredient = {
@@ -75,18 +82,30 @@ const IngredientForm = ({ ingredient, setActiveIngredient }) => {
     };
 
     let url = "add";
+    let notify = "created";
+    let apiCall = api.post;
     if (!!ingredient) {
-      url = "update";
       newIngredient.id = ingredient.id;
+      url = "update/" + newIngredient.id;
+      notify = "updated";
+      apiCall = api.put;
     }
     try {
-      const result = await api.post("/ingredient/" + url, newIngredient);
-      console.log(result);
+      const result = await apiCall("/ingredient/" + url, newIngredient);
+      setNotification({ text: "Ingredient is " + notify, status: "success" });
+      setFetchTrigger((prev) => prev + 1);
     } catch (err) {
       console.log(err);
+      setNotification({
+        text: "Something went wrong! please try again.",
+        status: "error",
+      });
     }
 
     setActiveIngredient(null);
+    e.target[0].value = "";
+    e.target[1].value = "";
+    e.target[2].value = "";
   };
 
   return (

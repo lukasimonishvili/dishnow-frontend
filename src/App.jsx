@@ -1,3 +1,4 @@
+import Notification from "./components/Notification";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import AppRouter from "./routes/AppRouter";
@@ -16,6 +17,7 @@ const StyledSpacer = Styled.div`
 const App = () => {
   return (
     <>
+      <Notification />
       <Header />
       <StyledSpacer>
         <AppRouter />

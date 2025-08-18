@@ -3,6 +3,8 @@ import Styled from "styled-components";
 import editIcon from "../assets/img/edit.svg";
 import deleteIcon from "../assets/img/delete.svg";
 import IngredientForm from "../components/IngredientForm";
+import api from "../api.jsx";
+import { useNotification } from "../contexts/notificationContext.jsx";
 
 const StyledIngredients = Styled.div`
     width: 100%;
@@ -75,27 +77,33 @@ const Ingredients = () => {
   const [ingredients, setIngredients] = useState([]);
   const [activeIngredient, setActiveIngredient] = useState(null);
   const [deletingIndex, setDeletingIndex] = useState(-1);
+  const [fetchTrigger, setFetchTrigger] = useState(0);
+  const { setNotification } = useNotification();
+
+  const fatchIngredients = async () => {
+    try {
+      const result = await api.get("/ingredient/getAll");
+      console.log(result);
+      setIngredients(result.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
-    const mockData = [
-      { id: 1, nameEN: "name 1", nameES: "nombre 1", nameCA: "nom 1" },
-      { id: 2, nameEN: "name 2", nameES: "nombre 2", nameCA: "nom 2" },
-      { id: 3, nameEN: "name 3", nameES: "nombre 3", nameCA: "nom 3" },
-      { id: 4, nameEN: "name 4", nameES: "nombre 4", nameCA: "nom 4" },
-      { id: 5, nameEN: "name 5", nameES: "nombre 5", nameCA: "nom 5" },
-      { id: 6, nameEN: "name 6", nameES: "nombre 6", nameCA: "nom 6" },
-      { id: 7, nameEN: "name 7", nameES: "nombre 7", nameCA: "nom 7" },
-    ];
+    fatchIngredients();
+  }, [fetchTrigger]);
 
-    setIngredients(mockData);
-  }, []);
-
-  const deleteIngredient = () => {
+  const deleteIngredient = async () => {
     const idOfIngredientToDelete = ingredients[deletingIndex].id;
-    console.log(
-      "here will be locgic to delete ingredient with id " +
-        idOfIngredientToDelete
-    );
+    try {
+      await api.delete("/ingredient/remove/" + idOfIngredientToDelete);
+      setNotification({ text: "ingredient was deleted", status: "success" });
+      setFetchTrigger((prev) => prev + 1);
+    } catch (err) {
+      setNotification({ text: "Failed to delete ingredient", status: "error" });
+      console.log(err);
+    }
     setDeletingIndex(-1);
   };
 
@@ -105,6 +113,7 @@ const Ingredients = () => {
       <IngredientForm
         ingredient={activeIngredient}
         setActiveIngredient={setActiveIngredient}
+        setFetchTrigger={setFetchTrigger}
       />
       <StyledTable>
         <div>
