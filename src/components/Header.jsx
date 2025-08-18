@@ -53,13 +53,13 @@ const StyledNavigation = Styled.nav`
         }
     }
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 1000px) {
         & a {
             margin-right: 20px;
         }
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 850px) {
         position: fixed;
         top: 70px;
         left: ${(props) => (props.isburgeropen ? "0" : "-100%")};
@@ -180,7 +180,7 @@ const StyledBurgerMenu = Styled.div`
         }
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 850px) {
         display: block;
     }
 `;
@@ -229,7 +229,6 @@ const Header = () => {
           {!!user && (
             <>
               <Link to="/add-recipe">{langData[language].addRecipe}</Link>
-              <Link to="/admin">{langData[language].adminPanel}</Link>
               <Link
                 to="/"
                 onClick={() => {

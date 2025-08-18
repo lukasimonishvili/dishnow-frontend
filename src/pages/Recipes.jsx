@@ -88,6 +88,7 @@ const StyledSidebar = Styled.aside`
     transition: 0.3s;
     background: #ffffff;
     padding: 10px;
+    z-index: 100;
   }
 `;
 
