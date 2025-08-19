@@ -111,6 +111,13 @@ const RecipeList = ({ category, ingredients, search }) => {
   const { language } = useLanguage();
   const [recipes, setRecipes] = useState([]);
 
+  const fetchRecipes = async () => {
+    try {
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
     let result = [...recipeData];
     if (!!category) {

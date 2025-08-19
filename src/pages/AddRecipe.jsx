@@ -1,11 +1,14 @@
 import Styled from "styled-components";
 import { useForm } from "react-hook-form";
 import { useLanguage } from "../contexts/languageContext.jsx";
+import { useUser } from "../contexts/userContext.jsx";
 import langData from "../assets/lang.json";
 import { useState, useEffect } from "react";
 import CategorySelect from "../components/CategorySelect.jsx";
 import IngredientSelect from "../components/IngredientSelect.jsx";
 import ImagePicker from "../components/ImagePicker.jsx";
+import api, { secureApi } from "../api.jsx";
+import { useNotification } from "../contexts/notificationContext.jsx";
 
 const StyledAddRecipe = Styled.div`
     width: 454px;   
@@ -121,72 +124,65 @@ const AddRecipe = () => {
   const { language } = useLanguage();
   const [categories, setCategories] = useState([]);
   const [ingredients, setIngredients] = useState([]);
+  const { user } = useUser();
+  const { setNotification } = useNotification();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
+    const formData = new FormData();
     const payload = data;
     payload.ingredients = payload.ingredients.map(
       (ingredient) => ingredient.value
     );
-    console.log(payload);
+    payload.user = user.id;
+    const files = payload.photos;
+    delete payload.photos;
+
+    const recipeJson = JSON.stringify(payload);
+    formData.append(
+      "recipe",
+      new Blob([recipeJson], { type: "application/json" })
+    );
+    files.forEach((file) => {
+      formData.append("photos", file);
+    });
+
+    try {
+      console.log(payload, files);
+      const response = await secureApi.post("/recipe/add", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      setNotification({ text: "Recipe created", status: "success" });
+    } catch (err) {
+      console.log(err);
+      setNotification({ text: "creating recipe faield", status: "error" });
+    }
+  };
+
+  const fetchCategories = async () => {
+    try {
+      const response = await api.get("/category/getAll");
+      setCategories(response.data);
+    } catch (err) {
+      console.log("err");
+    }
+  };
+
+  const fetchIngredients = async () => {
+    try {
+      const response = await api.get("/ingredient/getAll");
+      setIngredients(
+        response.data.map((ingredient) => {
+          return { value: ingredient.id, label: ingredient["name" + language] };
+        })
+      );
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
-    const mockCategories = [
-      { id: 1, nameEN: "Italian", nameES: "Italiano", nameCA: "Italià" },
-      { id: 2, nameEN: "Mexican", nameES: "Mexicana", nameCA: "Mexicana" },
-      { id: 3, nameEN: "Japanese", nameES: "Japonesa", nameCA: "Japonesa" },
-      { id: 4, nameEN: "Indian", nameES: "India", nameCA: "Índia" },
-      { id: 5, nameEN: "French", nameES: "Francesa", nameCA: "Francesa" },
-      { id: 6, nameEN: "Spanish", nameES: "Española", nameCA: "Espanyola" },
-      { id: 7, nameEN: "Greek", nameES: "Griega", nameCA: "Grega" },
-      { id: 8, nameEN: "Chinese", nameES: "China", nameCA: "Xinesa" },
-      { id: 9, nameEN: "Thai", nameES: "Tailandesa", nameCA: "Tailandesa" },
-      {
-        id: 10,
-        nameEN: "American",
-        nameES: "Estadounidense",
-        nameCA: "Estatunidenca",
-      },
-    ];
-
-    const mockIngredients = [
-      {
-        id: 1,
-        nameEN: "onion",
-        nameES: "cebolla",
-        nameCA: "ceba",
-      },
-      {
-        id: 2,
-        nameEN: "pasta",
-        nameES: "pasta",
-        nameCA: "pasta",
-      },
-      {
-        id: 3,
-        nameEN: "bacon",
-        nameES: "bacon",
-        nameCA: "bacon",
-      },
-      {
-        id: 4,
-        nameEN: "salt",
-        nameES: "sal",
-        nameCA: "sal",
-      },
-      {
-        id: 5,
-        nameEN: "water",
-        nameES: "agua",
-        nameCA: "aigua",
-      },
-    ];
-    setIngredients(
-      mockIngredients.map((ingredient) => {
-        return { value: ingredient.id, label: ingredient["name" + language] };
-      })
-    );
-    setCategories(mockCategories);
+    fetchCategories();
+    fetchIngredients();
   }, []);
 
   return (

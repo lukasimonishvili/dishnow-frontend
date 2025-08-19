@@ -11,6 +11,7 @@ const StyledNotification = Styled.div`
     transition: 0.3s;
     font-size: 18px;
     color: #ffffff;
+    z-index: 1000;
 `;
 
 const Notification = () => {

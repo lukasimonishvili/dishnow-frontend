@@ -98,10 +98,10 @@ const Categories = () => {
     const idOfCategoryToDelete = categories[deletingIndex].id;
     try {
       await secureApi.delete("/category/remove/" + idOfCategoryToDelete);
-      setNotification({ text: "ingredient was deleted", status: "success" });
+      setNotification({ text: "category was deleted", status: "success" });
       setFetchTrigger((prev) => prev + 1);
     } catch (err) {
-      setNotification({ text: "Failed to delete ingredient", status: "error" });
+      setNotification({ text: "Failed to delete category", status: "error" });
       console.log(err);
     }
     setDeletingIndex(-1);

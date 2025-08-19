@@ -97,7 +97,7 @@ const People = () => {
     const userToUpdate = users[updatingUser.index];
     userToUpdate.role = updatingUser.status === "MANAGER" ? 1 : 0;
     try {
-      const response = await secureApi.post(
+      const response = await secureApi.put(
         "/user/update/" + userToUpdate.id,
         userToUpdate
       );

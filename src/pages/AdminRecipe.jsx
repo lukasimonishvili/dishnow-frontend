@@ -1,5 +1,8 @@
 import Styled from "styled-components";
 import { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import api, { secureApi } from "../api";
+import { useNotification } from "../contexts/notificationContext";
 
 const StyledAdminRecipe = Styled.div`
     width: 100%;
@@ -138,58 +141,72 @@ const StyledImage = Styled.div`
 
 const AdminRecipe = () => {
   const [recipe, setRecipe] = useState(null);
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const { setNotification } = useNotification();
+
+  const fetchRecipe = async () => {
+    try {
+      const response = await api.get("/recipe/get/" + id);
+      setRecipe(response.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleRejectRecipe = async () => {
+    try {
+      const response = await secureApi.delete("/recipe/remove/" + id);
+      setNotification({
+        text: "recipe rejected",
+        status: "success",
+      });
+      navigate("/admin");
+    } catch (err) {
+      console.log(err);
+      setNotification({
+        text: "something went wrong, please try again later",
+        status: "error",
+      });
+    }
+  };
+
+  const handleApproveRecipe = async (e) => {
+    e.preventDefault();
+    const payload = {
+      status: 1,
+      nameEN: e.target[0].value,
+      nameES: e.target[1].value,
+      nameCA: e.target[2].value,
+      descriptionEN: e.target[3].value,
+      descriptionES: e.target[4].value,
+      descriptionCA: e.target[5].value,
+    };
+    try {
+      const response = await secureApi.put(
+        "/recipe/update/" + recipe.id,
+        payload
+      );
+      setNotification({
+        text: "recipe approved",
+        status: "success",
+      });
+    } catch (err) {
+      console.log(err);
+      setNotification({
+        text: "something went wrong, please try again later",
+        status: "error",
+      });
+    }
+  };
 
   useEffect(() => {
-    const mockData = {
-      id: 1,
-      nameEN: "Simple delicious beef tacos",
-      nameES: "Simple delicious beef tacos",
-      nameCA: "Simple delicious beef tacos",
-      category: {
-        id: 1,
-        nameEN: "Italian",
-        nameES: "Italian",
-        nameCA: "Italian",
-      },
-      ingredients: [
-        {
-          id: 1,
-          nameEN: "1 Slice onion",
-          nameES: "1 Slice onion",
-          nameCA: "1 Slice onion",
-        },
-        {
-          id: 2,
-          nameEN: "0.5 kg pasta",
-          nameES: "0.5 kg pasta",
-          nameCA: "0.5 kg pasta",
-        },
-        {
-          id: 3,
-          nameEN: "3 slices bacon",
-          nameES: "3 slices bacon",
-          nameCA: "3 slices bacon",
-        },
-        { id: 4, nameEN: "salt", nameES: "salt", nameCA: "salt" },
-        { id: 5, nameEN: "water", nameES: "water", nameCA: "water" },
-      ],
-      descriptionEN: "Cook beef with spices and serve in tacos.",
-      descriptionES: "Cook beef with spices and serve in tacos.",
-      descriptionCA: "Cook beef with spices and serve in tacos.",
-      photos: [
-        "https://www.vincenzosplate.com/wp-content/uploads/2021/01/spaghetti-carbonara.png",
-        "https://cdn6.recetasdeescandalo.com/wp-content/uploads/2015/02/Espaguetis-a-la-carbonara.-Receta-tradicional-1.jpg",
-        "https://skinnyspatula.com/wp-content/uploads/2020/09/Carbonara-di-Mare4-720x405.jpg",
-      ],
-      status: "PENDING",
-    };
-
-    setRecipe(mockData);
+    fetchRecipe();
   }, []);
   return (
     <StyledAdminRecipe>
       <h2>Review recipe</h2>
-      <StyledForm>
+      <StyledForm onSubmit={handleApproveRecipe}>
         <div>
           <label htmlFor="nameEN">English name</label>
           <input
@@ -236,7 +253,7 @@ const AdminRecipe = () => {
           ></textarea>
         </div>
         <button>Approve</button>
-        <StyledReject>Reject</StyledReject>
+        <StyledReject onClick={handleRejectRecipe}>Reject</StyledReject>
       </StyledForm>
       <StyledData>
         <h4>Category: {!!recipe && recipe.category.nameEN}</h4>
@@ -246,7 +263,8 @@ const AdminRecipe = () => {
             recipe.ingredients.map((ing) => <li key={ing.id}>{ing.nameEN}</li>)}
         </ul>
         <div>
-          {!!recipe && recipe.photos.map((url) => <StyledImage image={url} />)}
+          {!!recipe &&
+            recipe.photos.map((url) => <StyledImage key={url} image={url} />)}
         </div>
       </StyledData>
     </StyledAdminRecipe>
