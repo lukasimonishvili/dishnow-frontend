@@ -3,8 +3,10 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import langData from "../assets/lang.json";
 import { useLanguage } from "../contexts/languageContext.jsx";
-import recipeData from "../assets/recipes.json";
 import heartIcon from "../assets/img/heart.svg";
+import hearFulltIcon from "../assets/img/heart-full.svg";
+import api from "../api.jsx";
+import { useUser } from "../contexts/userContext.jsx";
 
 const StyledListWrapper = Styled.div`
   width: 100%;
@@ -33,6 +35,14 @@ const StyledList = Styled.div`
 
   @media screen and (max-width: 870px) {
     flex-direction: column;
+  }
+
+  & h4 {
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 32px;
+    color: gray;
   }
 `;
 
@@ -110,28 +120,28 @@ const StyledListItem = Styled.div`
 const RecipeList = ({ category, ingredients, search }) => {
   const { language } = useLanguage();
   const [recipes, setRecipes] = useState([]);
+  const { user } = useUser();
 
   const fetchRecipes = async () => {
+    let query = new URLSearchParams();
+    if (!!category) query.append("categoryId", category.id);
+    if (ingredients.length)
+      query.append(
+        "ingredientIds",
+        ingredients.map((ing) => ing.value).join(",")
+      );
+    if (search.length) query.append("keyword", search);
+
     try {
+      const response = await api.get("/recipe/all?" + query.toString());
+      setRecipes(response.data);
     } catch (err) {
       console.log(err);
     }
   };
 
   useEffect(() => {
-    let result = [...recipeData];
-    if (!!category) {
-      result = result.filter((recipe) => recipe.category.id === category.id);
-    }
-
-    if (ingredients.length) {
-      console.log(ingredients);
-    }
-
-    if (search.length) {
-      console.log("search");
-    }
-    setRecipes(result);
+    fetchRecipes();
   }, [category, ingredients.length, search]);
 
   return (
@@ -140,19 +150,27 @@ const RecipeList = ({ category, ingredients, search }) => {
         {!!category ? category["name" + language] : langData[language].all}
       </h3>
       <StyledList>
-        {recipes.map((recipe) => (
-          <StyledListItem key={recipe.id} image={recipe.photos[0]}>
-            <div className="cover" />
-            <h5>{recipe.category["name" + language]}</h5>
-            <h3>{recipe["name" + language]}</h3>
-            <div className="footer">
-              <Link to={"/recipe/" + recipe.id}>
-                {langData[language].seeMore}
-              </Link>
-              <img src={heartIcon} />
-            </div>
-          </StyledListItem>
-        ))}
+        {recipes.length ? (
+          recipes.map((recipe) => (
+            <StyledListItem key={recipe.id} image={recipe.photos[0]}>
+              <div className="cover" />
+              <h5>{recipe.category["name" + language]}</h5>
+              <h3>{recipe["name" + language]}</h3>
+              <div className="footer">
+                <Link to={"/recipe/" + recipe.id}>
+                  {langData[language].seeMore}
+                </Link>
+                {/* {user && user.favoriteRecipes.includes(recipe.id) ? (
+                  <img src={hearFulltIcon} />
+                ) : (
+                  <img src={heartIcon} />
+                )} */}
+              </div>
+            </StyledListItem>
+          ))
+        ) : (
+          <h4>{langData[language].dataNotFound}</h4>
+        )}
       </StyledList>
     </StyledListWrapper>
   );

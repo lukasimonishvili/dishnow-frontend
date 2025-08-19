@@ -68,7 +68,9 @@
     "registerSuccess": "Registration went successfully",
     "addRecipe": "Add recipe",
     "logOut": "Log out",
-    "adminPanel": "Admin panel"
+    "adminPanel": "Admin panel",
+    "dataNotFound": "Data not found...",
+    "recipeCreated": "Recipe created"
   },
   "ES": {
     "home": "Inicio",
@@ -139,7 +141,9 @@
     "registerSuccess": "El registro se realizó correctamente",
     "addRecipe": "Añadir receta",
     "logOut": "Cerrar sesión",
-    "adminPanel": "Panel de administración"
+    "adminPanel": "Panel de administración",
+    "dataNotFound": "Datos no encontrados...",
+    "recipeCreated": "Receta creada"
   },
   "CA": {
     "home": "Inici",
@@ -210,6 +214,8 @@
     "registerSuccess": "El registre s'ha fet correctament",
     "addRecipe": "Afegeix una recepta",
     "logOut": "Tanca la sessió",
-    "adminPanel": "Panell d'administració"
+    "adminPanel": "Panell d'administració",
+    "dataNotFound": "No s'han trobat dades...",
+    "recipeCreated": "Recepta creada"
   }
 }

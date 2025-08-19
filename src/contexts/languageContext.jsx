@@ -18,7 +18,6 @@ export const LanguageProvider = ({ children }) => {
   const [language, setLanguage] = useState(setDefaultLanguage());
 
   const changeLanguage = (lang) => {
-    console.log("hi");
     if (!whiteList.includes(lang)) return;
     setLanguage(lang);
     window.localStorage.setItem("lang", lang);

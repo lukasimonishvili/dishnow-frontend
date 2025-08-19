@@ -83,7 +83,6 @@ const Ingredients = () => {
   const fatchIngredients = async () => {
     try {
       const result = await api.get("/ingredient/getAll");
-      console.log(result);
       setIngredients(result.data);
     } catch (err) {
       console.log(err);

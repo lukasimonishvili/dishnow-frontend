@@ -21,6 +21,7 @@ export const UserProvider = ({ children }) => {
         if (freshToken) localStorage.setItem("token", freshToken);
         const decoded = jwtDecode(token);
         const userRequest = await api.get("/user/get/" + decoded.sub);
+        console.log(userRequest.data);
         setUser(userRequest.data);
       } catch (err) {
         console.error("Invalid token:", err);

@@ -120,6 +120,7 @@ const AddRecipe = () => {
     handleSubmit,
     control,
     formState: { errors },
+    reset,
   } = useForm();
   const { language } = useLanguage();
   const [categories, setCategories] = useState([]);
@@ -147,14 +148,20 @@ const AddRecipe = () => {
     });
 
     try {
-      console.log(payload, files);
       const response = await secureApi.post("/recipe/add", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      setNotification({ text: "Recipe created", status: "success" });
+      setNotification({
+        text: langData[language].recipeCreated,
+        status: "success",
+      });
+      reset();
     } catch (err) {
       console.log(err);
-      setNotification({ text: "creating recipe faield", status: "error" });
+      setNotification({
+        text: langData[language].somethingWrong,
+        status: "error",
+      });
     }
   };
 
