@@ -160,11 +160,11 @@ const RecipeList = ({ category, ingredients, search }) => {
                 <Link to={"/recipe/" + recipe.id}>
                   {langData[language].seeMore}
                 </Link>
-                {/* {user && user.favoriteRecipes.includes(recipe.id) ? (
+                {user && user.favoriteRecipes.includes(recipe.id) ? (
                   <img src={hearFulltIcon} />
                 ) : (
                   <img src={heartIcon} />
-                )} */}
+                )}
               </div>
             </StyledListItem>
           ))
